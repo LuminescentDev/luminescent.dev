@@ -9,7 +9,7 @@ specifiers:
   '@types/node': latest
   '@typescript-eslint/eslint-plugin': 5.45.1
   '@typescript-eslint/parser': 5.45.1
-  autoprefixer: 10.4.11
+  autoprefixer: 10.4.13
   compression: ^1.7.4
   eslint: 8.29.0
   eslint-plugin-qwik: 0.15.2
@@ -38,7 +38,7 @@ devDependencies:
   '@types/node': 18.11.11
   '@typescript-eslint/eslint-plugin': 5.45.1_tdm6ms4ntwhlpozn7kjqrhum74
   '@typescript-eslint/parser': 5.45.1_s5ps7njkmjlaqajutnox5ntcla
-  autoprefixer: 10.4.11_postcss@8.4.19
+  autoprefixer: 10.4.13_postcss@8.4.19
   eslint: 8.29.0
   eslint-plugin-qwik: 0.15.2_eslint@8.29.0
   node-fetch: 3.3.0
@@ -507,8 +507,8 @@ packages:
     hasBin: true
     dev: true
 
-  /autoprefixer/10.4.11_postcss@8.4.19:
-    resolution: {integrity: sha512-5lHp6DgRodxlBLSkzHOTcufWFflH1ewfy2hvFQyjrblBFlP/0Yh4O/Wrg4ow8WRlN3AAUFFLAQwX8hTptzqVHg==}
+  /autoprefixer/10.4.13_postcss@8.4.19:
+    resolution: {integrity: sha512-49vKpMqcZYsJjwotvt4+h/BCjJVnhGwcLpDt5xkcaOG3eLrG/HUYLagrihYsQ+qrIBgIzX1Rw7a6L8I/ZA1Atg==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
