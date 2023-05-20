@@ -1,8 +1,9 @@
 import { component$, Slot } from '@builder.io/qwik';
-import { Link, useNavigate } from '@builder.io/qwik-city';
+import { Link, useLocation } from '@builder.io/qwik-city';
 
-import { LogoDiscord, LogoGithub, Menu, Code, GitBranchOutline } from 'qwik-ionicons';
+import { LogoDiscord, LogoGithub, Menu, GitBranchOutline } from 'qwik-ionicons';
 import Logo from '~/components/elements/Logo';
+import LoadingIcon from './icons/LoadingIcon';
 
 export default component$(() => {
   return (
@@ -11,10 +12,6 @@ export default component$(() => {
         <NavButton href="/forks" extraClass="hidden xl:flex gap-3">
           <GitBranchOutline width="24" class="fill-current" />
           Fork Graph
-        </NavButton>
-        <NavButton href="/projects" extraClass="hidden xl:flex gap-4">
-          <Code width="24" class="fill-current" />
-          Projects
         </NavButton>
         <NavButton external icon href="https://github.com/LuminescentDev" title="GitHub" extraClass="hidden xl:flex">
           <LogoGithub width="24" class="fill-purple-200" />
@@ -26,7 +23,7 @@ export default component$(() => {
           const classList = document.getElementById('mobile-menu')?.classList;
           if (classList?.contains('hidden')) classList.replace('hidden', 'flex');
           else classList?.replace('flex', 'hidden');
-        }} class="transition duration-200 ease-in-out hover:bg-gray-800 hover:text-white px-4 py-2 rounded-lg text-3xl xl:hidden">
+        }} class="transition ease-in-out hover:bg-gray-800 hover:text-white px-4 py-2 rounded-lg text-3xl xl:hidden">
           <Menu width="24" class="fill-current"/>
         </button>
       </MainNav>
@@ -34,10 +31,6 @@ export default component$(() => {
         <NavButton mobile href="/forks" extraClass="flex xl:hidden gap-2">
           <GitBranchOutline width="24" class="fill-current" />
           Fork Graph
-        </NavButton>
-        <NavButton mobile href="/forks" extraClass="flex xl:hidden gap-2">
-          <Code width="24" class="fill-current" />
-          Projects
         </NavButton>
         <div class="flex flex-row">
           <NavButton external mobile icon href="https://github.com/LuminescentDev" title="GitHub" extraClass="flex xl:hidden">
@@ -63,13 +56,17 @@ export const Nav = component$(() => {
 });
 
 export const Brand = component$(() => {
+  const location = useLocation();
   return (
-    <div class="flex flex-1 items-center justify-start">
-      <Link href="/" class="transition duration-200 ease-in-out text-gray-300 hover:bg-gray-800 hover:text-white drop-shadow-2xl px-3 pt-3 pb-2 rounded-lg text-lg flex items-center whitespace-nowrap">
+    <div class="flex items-center justify-start">
+      <Link href="/" class="transition ease-in-out text-gray-300 hover:bg-gray-800 hover:text-white drop-shadow-2xl px-3 pt-3 pb-2 rounded-lg text-lg flex gap-2 items-center whitespace-nowrap">
         <div style="filter: drop-shadow(0 0 0 #DD6CFF);" class="h-8 w-32">
           <div style="filter: drop-shadow(0 0 1rem #CB6CE6);">
             <Logo/>
           </div>
+        </div>
+        <div class={`${location.isNavigating ? '' : '-ml-10 opacity-0'} transition-all`}>
+          <LoadingIcon/>
         </div>
       </Link>
     </div>
@@ -97,18 +94,17 @@ export const MobileNav = component$(() => {
   );
 });
 
-export const NavButton = component$(({ href, title, icon, external, extraClass }: any) => {
-  const nav = useNavigate();
+export const NavButton = component$(({ href, title, icon, external, extraClass, style }: any) => {
   return <>
     {external &&
-      <a href={href} title={title} class={`group transition duration-200 ease-in-out ${extraClass} hover:bg-gray-800 hover:text-white px-4 py-2 rounded-lg ${icon ? 'text-3xl' : ''} items-center`}>
+      <a href={href} title={title} style={style} class={`group transition ease-in-out hover:bg-gray-800 hover:text-white ${icon ? 'text-3xl px-2' : 'px-4'} py-2 rounded-lg items-center ${extraClass}`}>
         <Slot />
       </a>
     }
     {!external &&
-      <button onClick$={() => { document.getElementById('mobile-menu')?.classList.replace('flex', 'hidden'); nav(href); }} title={title} class={`group transition duration-200 ease-in-out ${extraClass} hover:bg-gray-800 hover:text-white px-4 py-2 rounded-lg ${icon ? 'text-3xl' : ''} items-center`}>
+      <Link href={href} onClick$={async () => { document.getElementById('mobile-menu')?.classList.replace('flex', 'hidden'); }} title={title} style={style} class={`group transition ease-in-out hover:bg-gray-800 hover:text-white ${icon ? 'text-3xl px-2' : 'px-4'} py-2 rounded-lg items-center ${extraClass}`}>
         <Slot />
-      </button>
+      </Link>
     }
   </>;
 });
