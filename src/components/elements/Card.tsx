@@ -19,7 +19,7 @@ export default component$(({ link, name, icon, github }: any) => {
         )}
       </div>
       <div class="p-8 w-64">
-        <img src={icon} alt={name} class="mb-10" draggable={false} width={192} height={192} />
+        <img src={icon} alt={name} class="mb-10 rounded-lg" draggable={false} width={192} height={192} />
         <h2 class="text-lg font-bold">{name}</h2>
         <p class="text-gray-400 mb-2">
           <Slot />

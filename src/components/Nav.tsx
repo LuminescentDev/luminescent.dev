@@ -9,34 +9,34 @@ export default component$(() => {
   return (
     <Nav>
       <MainNav>
-        <NavButton href="/forks" extraClass="hidden xl:flex gap-3">
+        <NavButton href="/forks" extraClass="hidden sm:flex gap-3">
           <GitBranchOutline width="24" class="fill-current" />
           Fork Graph
         </NavButton>
-        <NavButton external icon href="https://github.com/LuminescentDev" title="GitHub" extraClass="hidden xl:flex">
+        <NavButton external icon href="https://github.com/LuminescentDev" title="GitHub" extraClass="hidden sm:flex">
           <LogoGithub width="24" class="fill-purple-200" />
         </NavButton>
-        <NavButton icon href="/discord" title="Discord" extraClass="hidden xl:flex">
+        <NavButton icon href="/discord" title="Discord" extraClass="hidden sm:flex">
           <LogoDiscord width="24" class="fill-indigo-200" />
         </NavButton>
         <button id="mobile-menu-button" type="button" title="Menu" onClick$={() => {
           const classList = document.getElementById('mobile-menu')?.classList;
           if (classList?.contains('hidden')) classList.replace('hidden', 'flex');
           else classList?.replace('flex', 'hidden');
-        }} class="transition ease-in-out hover:bg-gray-800 hover:text-white px-4 py-2 rounded-lg text-3xl xl:hidden">
+        }} class="transition ease-in-out hover:bg-gray-800 hover:text-white px-4 py-2 rounded-lg text-3xl sm:hidden">
           <Menu width="24" class="fill-current"/>
         </button>
       </MainNav>
       <MobileNav>
-        <NavButton mobile href="/forks" extraClass="flex xl:hidden gap-2">
+        <NavButton mobile href="/forks" extraClass="flex sm:hidden gap-2">
           <GitBranchOutline width="24" class="fill-current" />
           Fork Graph
         </NavButton>
         <div class="flex flex-row">
-          <NavButton external mobile icon href="https://github.com/LuminescentDev" title="GitHub" extraClass="flex xl:hidden">
+          <NavButton external mobile icon href="https://github.com/LuminescentDev" title="GitHub" extraClass="flex sm:hidden">
             <LogoGithub width="24" class="fill-purple-200" />
           </NavButton>
-          <NavButton mobile icon href="/discord" title="Discord" extraClass="flex xl:hidden">
+          <NavButton mobile icon href="/discord" title="Discord" extraClass="flex sm:hidden">
             <LogoDiscord width="24" class="fill-indigo-200" />
           </NavButton>
         </div>
@@ -88,7 +88,7 @@ export const MainNav = component$(() => {
 
 export const MobileNav = component$(() => {
   return (
-    <div id="mobile-menu" class="gap-4 py-4 px-3 bg-black rounded-lg mt-2 hidden flex-col xl:hidden">
+    <div id="mobile-menu" class="gap-4 py-4 px-3 bg-black rounded-lg mt-2 hidden flex-col sm:hidden">
       <Slot />
     </div>
   );

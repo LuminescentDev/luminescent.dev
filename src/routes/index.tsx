@@ -8,13 +8,23 @@ import Card from '~/components/elements/Card';
 
 export default component$(() => {
   return (
-    <section class="flex flex-col gap-3 mx-auto max-w-6xl px-6 items-center justify-center py-10" style={{ minHeight: 'calc(100dvh - 64px)' }}>
+    <section class="flex flex-col gap-3 mx-auto max-w-6xl px-6 items-center justify-center py-20" style={{ minHeight: 'calc(100dvh - 64px)' }}>
       <div style="filter: drop-shadow(0 0 0 #DD6CFF);" class="px-[10%]">
         <div style="filter: drop-shadow(0 0 3rem #CB6CE6);">
           <Logo/>
         </div>
       </div>
-      <h1 class="font-bold text-white text-xl sm:text-3xl mt-6">
+
+      <div class="flex flex-nowrap gap-3">
+        <a href="https://github.com/LuminescentDev" class="flex justify-center sm:justify-start transition rounded-xl hover:bg-gray-700 border border-gray-900 px-4 py-3 font-bold text-purple-100 text-xl md:text-3xl whitespace-nowrap gap-4 items-center">
+          <LogoGithub width="24" class="fill-current" />
+        </a>
+        <a href="/discord" class="flex justify-center sm:justify-start transition rounded-xl hover:bg-gray-700 border border-gray-900 px-4 py-3 font-bold text-indigo-100 text-xl md:text-3xl whitespace-nowrap gap-4 items-center">
+          <LogoDiscord width="24" class="fill-current"/>
+        </a>
+      </div>
+
+      <h1 class="font-bold text-white text-xl sm:text-3xl mt-10">
         Our Projects
       </h1>
       <h1 class="text-sm sm:text-xl pb-10">
@@ -51,13 +61,19 @@ export default component$(() => {
         </div>
       </div>
 
-      <div class="flex flex-nowrap gap-3 pt-10">
-        <a href="https://github.com/LuminescentDev" class="flex justify-center sm:justify-start transition duration-200 rounded-2xl shadow-lg backdrop-blur-lg bg-gray-800 hover:bg-gray-700 border border-gray-700 px-6 py-3 font-bold text-purple-100 md:py-4 md:px-8 text-xl md:text-3xl whitespace-nowrap gap-4 items-center">
-          <LogoGithub width="24" class="fill-current" />
-        </a>
-        <a href="/discord" class="flex justify-center sm:justify-start transition duration-200 rounded-2xl shadow-lg backdrop-blur-lg bg-gray-800 hover:bg-gray-700 border border-gray-700 px-6 py-3 font-bold text-indigo-100 md:py-4 md:px-8 text-xl md:text-3xl whitespace-nowrap gap-4 items-center">
-          <LogoDiscord width="24" class="fill-current"/>
-        </a>
+      <h1 class="font-bold text-white text-xl sm:text-3xl mt-10">
+        Us
+      </h1>
+      <h1 class="text-sm sm:text-xl pb-10">
+        Here are our profiles
+      </h1>
+      <div class="flex gap-4 px-10">
+        <Card name="Saboor" icon="https://avatars.githubusercontent.com/u/42164502" github="https://github.com/saboooor" link="https://sab.luminescent.dev">
+          Hey my name's saboor, you can call me sab, I mainly work on a Minecraft server called Nether Depths and a discord bot named Cactie, I also want to be a chef for a living.
+        </Card>
+        <Card name="bwmp" icon="https://avatars.githubusercontent.com/u/67001116" github="https://github.com/oli-idk" link="https://akiradev.xyz">
+          Hey my name's oli/bwmp/Akira, I mainly work on Discord bots like Shoto and websites like SimplyMC.
+        </Card>
       </div>
     </section>
   );
