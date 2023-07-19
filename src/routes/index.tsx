@@ -27,13 +27,13 @@ export default component$(() => {
       <h1 class="font-bold text-white text-xl sm:text-3xl mt-10">
         Our Projects
       </h1>
-      <h1 class="text-sm sm:text-xl pb-10">
+      <h1 class="text-sm sm:text-xl pb-8">
         Here are some of the projects we're working on
       </h1>
       <div class="flex w-full overflow-x-hidden" style={{
         '-webkit-mask-image': 'linear-gradient(90deg, transparent, #000 2%, #000 98%, transparent);',
       }}>
-        <div class="flex gap-4 projects px-10">
+        <div class="flex gap-4 px-10 overflow-x-auto py-2">
           <Card name="SimplyMC" icon="https://www.simplymc.art/icon-192x192.png" github="https://github.com/LuminescentDev/SimplyMC" link="https://simplymc.art">
             A Minecraft Multitool for server owners, developers, and players.
           </Card>
@@ -45,12 +45,12 @@ export default component$(() => {
             Another Discord bot that does stuff<br />
             Fun, Utilies, and more!
           </Card>
-          <Card name="Botflop" icon="https://rgb.birdflop.com/assets/images/new_birdflop_logo_large.png" github="https://github.com/LuminescentDev/botflop">
-            Discord Bot for server hosts, devs, and admins. Analyzes timings reports & uploads text files to a bin
-          </Card>
           <Card name="Nether Depths" icon="https://raw.githubusercontent.com/saboooor/Nether-Depths/main/Branding/nd.png" link="https://netherdepths.com">
             Surpass the limits of the Nether.
             A Minecraft server with various features and custom generation and more
+          </Card>
+          <Card name="Botflop" icon="https://rgb.birdflop.com/assets/images/new_birdflop_logo_large.png" github="https://github.com/LuminescentDev/botflop">
+            Discord Bot for server hosts, devs, and admins. Analyzes timings reports & uploads text files to a bin
           </Card>
           <Card name="Luminescent Transcript" icon="https://avatars.githubusercontent.com/u/86643576?s=200&v=4" github="https://github.com/LuminescentDev/LuminescentTranscript">
             A Discord message transcript viewer (Not public yet, specifically made for Cactie)
@@ -67,7 +67,7 @@ export default component$(() => {
       <h1 class="text-sm sm:text-xl pb-10">
         Here are our profiles
       </h1>
-      <div class="flex gap-4 px-10">
+      <div class="flex flex-col sm:flex-row gap-4 px-10">
         <Card name="Saboor" icon="https://avatars.githubusercontent.com/u/42164502" github="https://github.com/saboooor" link="https://sab.luminescent.dev">
           Hey my name's saboor, you can call me sab, I mainly work on a Minecraft server called Nether Depths and a discord bot named Cactie, I also want to be a chef for a living.
         </Card>
