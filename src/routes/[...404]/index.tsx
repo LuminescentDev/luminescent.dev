@@ -1,5 +1,5 @@
 import { component$ } from '@builder.io/qwik';
-import { DocumentHead, Link } from '@builder.io/qwik-city';
+import { DocumentHead, Link, routeLoader$ } from '@builder.io/qwik-city';
 
 const decode = (str: string):string => Buffer.from(str, 'base64').toString('binary');
 
