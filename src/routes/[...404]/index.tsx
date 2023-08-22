@@ -1,11 +1,8 @@
 import { component$ } from '@builder.io/qwik';
 import { DocumentHead, Link, routeLoader$ } from '@builder.io/qwik-city';
 
-const decode = (str: string):string => Buffer.from(str, 'base64').toString('binary');
-
 export const useResults = routeLoader$(async ({ params, redirect }) => {
-  const url = decode(params['404']);
-  console.log(params['404']);
+  const url = atob(params['404']);
   if (url.startsWith('http')) throw redirect(302, url);
 });
 
