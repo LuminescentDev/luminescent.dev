@@ -1,6 +1,13 @@
 import { component$ } from '@builder.io/qwik';
 import { DocumentHead, Link } from '@builder.io/qwik-city';
 
+const decode = (str: string):string => Buffer.from(str, 'base64').toString('binary');
+
+export const useResults = routeLoader$(async ({ params, redirect }) => {
+  const url = decode(params['404'])
+  if (url.startsWith('http')) throw redirect(302, params['404'])
+});
+
 export default component$(() => {
   return (
     <section class="flex mx-auto max-w-6xl px-6 items-center" style={{ minHeight: 'calc(100dvh - 64px)' }}>
