@@ -1,7 +1,7 @@
 import { component$, Slot } from '@builder.io/qwik';
 import { Link, useLocation } from '@builder.io/qwik-city';
 
-import { LogoDiscord, LogoGithub, Menu, GitBranchOutline } from 'qwik-ionicons';
+import { LogoDiscord, LogoGithub, Menu, GitBranchOutline, DownloadOutline } from 'qwik-ionicons';
 import Logo from '~/components/elements/Logo';
 import LoadingIcon from './icons/LoadingIcon';
 
@@ -13,6 +13,10 @@ export default component$(() => {
           <GitBranchOutline width="24" class="fill-current" />
           Fork Graph
         </NavButton>
+        <NavButton href="/downloads" extraClass="hidden md:flex gap-3">
+          <DownloadOutline width="24" class="fill-current" />
+          Downloads
+        </NavButton>
         <NavButton external icon href="https://github.com/LuminescentDev" title="GitHub" extraClass="hidden sm:flex">
           <LogoGithub width="24" class="fill-purple-200" />
         </NavButton>
@@ -23,7 +27,7 @@ export default component$(() => {
           const classList = document.getElementById('mobile-menu')?.classList;
           if (classList?.contains('hidden')) classList.replace('hidden', 'flex');
           else classList?.replace('flex', 'hidden');
-        }} class="transition ease-in-out hover:bg-gray-800 hover:text-white px-4 py-2 rounded-lg text-3xl sm:hidden">
+        }} class="transition ease-in-out hover:bg-gray-800 hover:text-white px-4 py-2 rounded-lg text-3xl md:hidden">
           <Menu width="24" class="fill-current"/>
         </button>
       </MainNav>
@@ -31,6 +35,10 @@ export default component$(() => {
         <NavButton mobile href="/forks" extraClass="flex sm:hidden gap-2">
           <GitBranchOutline width="24" class="fill-current" />
           Fork Graph
+        </NavButton>
+        <NavButton mobile href="/downloads" extraClass="flex md:hidden gap-3">
+          <DownloadOutline width="24" class="fill-current" />
+          Downloads
         </NavButton>
         <div class="flex flex-row">
           <NavButton external mobile icon href="https://github.com/LuminescentDev" title="GitHub" extraClass="flex sm:hidden">
