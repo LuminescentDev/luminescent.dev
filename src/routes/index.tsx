@@ -37,19 +37,19 @@ export default component$(() => {
           <Card name="SimplyMC" icon="https://www.simplymc.art/icon-192x192.png" github="https://github.com/LuminescentDev/SimplyMC" link="https://simplymc.art">
             A Minecraft Multitool for server owners, developers, and players.
           </Card>
-          <Card name="Cactie" icon="https://cactie.luminescent.dev/assets/images/Cactie.webp" github="https://github.com/saboooor/Cactie" link="https://cactie.luminescent.dev/">
+          <Card name="Cactie" icon="https://cactie.luminescent.dev/icon-512x512.png" github="https://github.com/saboooor/Cactie" link="https://cactie.luminescent.dev/">
             A Discord bot that does stuff ig
             Admin, Fun, Tickets, Utilities, Animals, and Actions!
           </Card>
-          <Card name="Shoto" icon="https://cdn.discordapp.com/avatars/796935151417688074/6202f5e5cc62481162ef0a98b364f702.webp?size=2048" github="https://github.com/LuminescentDev/Shoto" link="https://shoto.akiradev.xyz/">
-            Another Discord bot that does stuff<br />
-            Fun, Utilies, and more!
+          <Card name="Lumin" icon="https://lumin.luminescent.dev/Lumin.png" github="https://github.com/Oli-idk/Lumin" link="https://lumin.luminescent.dev/">
+            A silly little moon themed bot<br />
+            Interactions, Utilities, Fun!
           </Card>
           <Card name="Nether Depths" icon="https://raw.githubusercontent.com/saboooor/Nether-Depths/main/Branding/nd.png" link="https://netherdepths.com">
             Surpass the limits of the Nether.
             A Minecraft server with various features and custom generation and more
           </Card>
-          <Card name="Botflop" icon="https://rgb.birdflop.com/assets/images/new_birdflop_logo_large.png" github="https://github.com/LuminescentDev/botflop">
+          <Card name="Botflop" icon="https://birdflop.com/assets/images/bf-3-121x121.png" github="https://github.com/LuminescentDev/botflop">
             Discord Bot for server hosts, devs, and admins. Analyzes timings reports & uploads text files to a bin
           </Card>
           <Card name="Luminescent Transcript" icon="https://avatars.githubusercontent.com/u/86643576?s=200&v=4" github="https://github.com/LuminescentDev/LuminescentTranscript">
@@ -72,7 +72,7 @@ export default component$(() => {
           Hey my name's saboor, you can call me sab, I mainly work on a Minecraft server called Nether Depths and a discord bot named Cactie, I also want to be a chef for a living.
         </Card>
         <Card name="bwmp" icon="https://avatars.githubusercontent.com/u/67001116" github="https://github.com/oli-idk" link="https://akiradev.xyz">
-          Hey my name's oli/bwmp/Akira, I mainly work on Discord bots like Shoto and websites like SimplyMC.
+          Hey my name's Oli/bwmp/Akira, I mainly work on VRChat things, Discord bots like Lumin, Basement Bot, and websites like SimplyMC.
         </Card>
       </div>
     </section>
