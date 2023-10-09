@@ -104,10 +104,20 @@ export default component$(() => {
         Here are our profiles
       </h1>
       <div class="flex flex-col sm:flex-row gap-4 px-10">
-        <Card name="Saboor" icon="https://avatars.githubusercontent.com/u/42164502" github="https://github.com/saboooor" link="https://sab.luminescent.dev">
-          Hey my name's saboor, you can call me sab, I mainly work on a Minecraft server called Nether Depths and a discord bot named Cactie, I also want to be a chef for a living.
+        <Card big
+          name="Saboor (@saboor.)"
+          width={128}
+          icon="https://avatars.githubusercontent.com/u/42164502"
+          github="https://github.com/saboooor"
+          link="https://sab.luminescent.dev">
+          Hey my name's saboor, you can call me sab, I mainly work on a Discord bot named Cactie & make websites like this one and SimplyMC, I am also a Culinary Arts student at NAIT and want to be a chef for a living.
         </Card>
-        <Card name="bwmp" icon="https://avatars.githubusercontent.com/u/67001116" github="https://github.com/oli-idk" link="https://akiradev.xyz">
+        <Card big
+          name="bwmp (@akiradev)"
+          width={128}
+          icon="https://avatars.githubusercontent.com/u/67001116"
+          github="https://github.com/oli-idk"
+          link="https://akiradev.xyz">
           Hey my name's Oli/bwmp/Akira, I mainly work on VRChat things, Discord bots like Lumin, Basement Bot, and websites like SimplyMC.
         </Card>
       </div>

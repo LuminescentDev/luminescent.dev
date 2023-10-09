@@ -1,7 +1,7 @@
 import { component$, Slot } from '@builder.io/qwik';
 import { LogoGithub, GlobeOutline, LogoDiscord } from 'qwik-ionicons';
 
-export default component$(({ name, icon, link, github, discord, color }: any) => {
+export default component$(({ name, icon, link, github, discord, color, big }: any) => {
   return (
     <div class={{
       'flex-1 relative bg-gray-800/50 border rounded-xl group transition-all': true,
@@ -64,7 +64,11 @@ export default component$(({ name, icon, link, github, discord, color }: any) =>
           </a>
         )}
       </div>
-      <div class="p-8 w-64">
+      <div class={{
+        'p-8 py-10': true,
+        'w-64': !big,
+        'w-96': big,
+      }}>
         <img src={icon} alt={name} class="mb-10 rounded-lg" draggable={false} width={192} height={192} />
         <h2 class={{
           'text-gray-50 mb-2 text-xl font-bold': true,
