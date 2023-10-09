@@ -28,34 +28,70 @@ export default component$(() => {
         Our Projects
       </h1>
       <h1 class="text-sm sm:text-xl pb-8">
-        Here are some of the projects we're working on
+        Here are some of the projects we're working on - Hover over them to see more info
       </h1>
       <div class="flex w-full overflow-x-hidden" style={{
         '-webkit-mask-image': 'linear-gradient(90deg, transparent, #000 2%, #000 98%, transparent);',
       }}>
         <div class="flex gap-4 px-10 overflow-x-auto py-2">
-          <Card name="SimplyMC" icon="https://www.simplymc.art/icon-192x192.png" github="https://github.com/LuminescentDev/SimplyMC" link="https://simplymc.art" color="purple">
+          <Card
+            name="SimplyMC"
+            icon="https://www.simplymc.art/icon-192x192.png"
+            github="https://github.com/LuminescentDev/SimplyMC"
+            link="https://simplymc.art"
+            discord="https://discord.simplymc.art"
+            color="purple">
             A Minecraft Multitool for server owners, developers, and players.
           </Card>
-          <Card name="Cactie" icon="https://cactie.luminescent.dev/icon-512x512.png" github="https://github.com/saboooor/Cactie" link="https://cactie.luminescent.dev/" color="orange">
+          <Card
+            name="Cactie"
+            icon="https://cactie.luminescent.dev/icon-512x512.png"
+            github="https://github.com/saboooor/Cactie"
+            link="https://cactie.luminescent.dev/"
+            discord="/discord"
+            color="orange">
             A Discord bot that does stuff ig
             Admin, Fun, Tickets, Utilities, Animals, and Actions!
           </Card>
-          <Card name="Lumin" icon="https://lumin.luminescent.dev/Lumin.png" github="https://github.com/Oli-idk/Lumin" link="https://lumin.luminescent.dev/" color="pink">
+          <Card
+            name="Lumin"
+            icon="https://lumin.luminescent.dev/Lumin.png"
+            github="https://github.com/Oli-idk/Lumin"
+            link="https://lumin.luminescent.dev/"
+            discord="/discord"
+            color="pink">
             A silly little moon themed bot<br />
             Interactions, Utilities, Fun!
           </Card>
-          <Card name="Nether Depths" icon="https://raw.githubusercontent.com/saboooor/Nether-Depths/main/Branding/nd.png" link="https://netherdepths.com" color="red">
+          <Card
+            name="Nether Depths"
+            icon="https://raw.githubusercontent.com/saboooor/Nether-Depths/main/Branding/nd.png"
+            discord="https://discord.gg/Mw7fNpdg5N"
+            color="red">
             Surpass the limits of the Nether.
-            A Minecraft server with various features and custom generation and more
+            A former Minecraft server which shut down and turned into a community Discord server.
           </Card>
-          <Card name="Botflop" icon="https://birdflop.com/assets/images/bf-3-121x121.png" github="https://github.com/LuminescentDev/botflop" color="blue">
+          <Card
+            name="Botflop"
+            icon="https://birdflop.com/assets/images/bf-3-121x121.png"
+            github="https://github.com/LuminescentDev/botflop"
+            discord="https://discord.gg/nmgtX5z"
+            color="blue">
             Discord Bot for server hosts, devs, and admins. Analyzes timings reports & uploads text files to a bin
           </Card>
-          <Card name="Luminescent Transcript" icon="https://avatars.githubusercontent.com/u/86643576?s=200&v=4" github="https://github.com/LuminescentDev/LuminescentTranscript" color="pink">
+          <Card
+            name="Luminescent Transcript"
+            icon="https://avatars.githubusercontent.com/u/86643576?s=200&v=4"
+            github="https://github.com/LuminescentDev/LuminescentTranscript"
+            color="pink">
             A Discord message transcript viewer (Not public yet, specifically made for Cactie)
           </Card>
-          <Card name="Burgers on Fleek" icon="https://www.burgersonfleek.ca/icon.svg" github="https://github.com/saboooor/burgersonfleek" link="https://burgersonfleek.ca" color="orange">
+          <Card
+            name="Burgers on Fleek"
+            icon="https://www.burgersonfleek.ca/icon.svg"
+            github="https://github.com/saboooor/burgersonfleek"
+            link="https://burgersonfleek.ca"
+            color="orange">
             Not exactly a project- but if you live in Ontario, this burger spot is amazing guaranteed you will love it, (i made the website)
           </Card>
         </div>
