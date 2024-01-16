@@ -41,7 +41,7 @@ export default component$(() => {
             A Discord bot that does stuff ig
             Admin, Fun, Tickets, Utilities, Animals, and Actions!
           </Card>
-          <Card name="Lumin" icon="https://lumin.luminescent.dev/Lumin.png" github="https://github.com/Oli-idk/Lumin" link="https://lumin.luminescent.dev/">
+          <Card name="Lumin" icon="https://lumin.luminescent.dev/Lumin.png" github="https://github.com/bwmp/Lumin" link="https://lumin.luminescent.dev/">
             A silly little moon themed bot<br />
             Interactions, Utilities, Fun!
           </Card>
@@ -71,7 +71,7 @@ export default component$(() => {
         <Card name="Saboor" icon="https://avatars.githubusercontent.com/u/42164502" github="https://github.com/saboooor" link="https://sab.luminescent.dev">
           Hey my name's saboor, you can call me sab, I mainly work on a Minecraft server called Nether Depths and a discord bot named Cactie, I also want to be a chef for a living.
         </Card>
-        <Card name="bwmp" icon="https://avatars.githubusercontent.com/u/67001116" github="https://github.com/oli-idk" link="https://akiradev.xyz">
+        <Card name="bwmp" icon="https://avatars.githubusercontent.com/u/67001116" github="https://github.com/bwmp" link="https://akiradev.me">
           Hey my name's Oli/bwmp/Akira, I mainly work on VRChat things, Discord bots like Lumin, Basement Bot, and websites like SimplyMC.
         </Card>
       </div>
