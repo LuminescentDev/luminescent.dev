@@ -117,7 +117,7 @@ export default component$(() => {
           width={128}
           icon="https://avatars.githubusercontent.com/u/67001116"
           github="https://github.com/bwmp"
-          link="https://akiradev.xyz">
+          link="https://akiradev.me">
           Hey my name's Oli/bwmp/Akira, I mainly work on VRChat things, Discord bots like Lumin, Basement Bot, and websites like SimplyMC.
         </Card>
       </div>
