@@ -47,12 +47,12 @@ export default component$(() => {
         <a href="https://mega.nz/file/PhUQDCLS#YD2e7cNq2YaUhMdKfJGsJ4OPkpqYbNou36LgT3S6VfE" class="flex transition rounded-xl bg-red-600/80 hover:bg-red-600 border-red-600 px-6 py-3 font-bold text-red-100 md:py-4 md:px-8 md:text-lg whitespace-nowrap justify-center">
           Jan 20 2023 Slimefun Shutdown | 1.19 - 3.3 GB
         </a>
-        <a href="https://mega.nz/file/PhUQDCLS#YD2e7cNq2YaUhMdKfJGsJ4OPkpqYbNou36LgT3S6VfE" class="flex transition rounded-xl bg-red-600/80 hover:bg-red-600 border-red-600 px-6 py-3 font-bold text-red-100 md:py-4 md:px-8 md:text-lg whitespace-nowrap justify-center">
+        <a href="https://mega.nz/file/blNl0ZiB#h3NLZlB0GYeyrnrvWZzi9DZiLrjryJ1b3GZhIWP0ctE" class="flex transition rounded-xl bg-red-600/80 hover:bg-red-600 border-red-600 px-6 py-3 font-bold text-red-100 md:py-4 md:px-8 md:text-lg whitespace-nowrap justify-center">
           Jun 13 2023 Zen Reset | 1.19 - 134 MB
         </a>
-        <p class="flex transition rounded-xl bg-red-600/30 hover:bg-red-600 border-red-600 px-6 py-3 font-bold text-red-100 md:py-4 md:px-8 md:text-lg whitespace-nowrap justify-center">
-          Sept 13 2023 Shutdown | 1.20
-        </p>
+        <a href="https://mega.nz/file/mtcR3CpQ#-V8MD-7llQsdodsCMsyV5wkPIUlnHToHyxWZ-bdfZww" class="flex transition rounded-xl bg-red-600/80 hover:bg-red-600 border-red-600 px-6 py-3 font-bold text-red-100 md:py-4 md:px-8 md:text-lg whitespace-nowrap justify-center">
+          Sept 13 2023 Shutdown | 1.20 - 3.5 GB
+        </a>
       </div>
     </section>
   );

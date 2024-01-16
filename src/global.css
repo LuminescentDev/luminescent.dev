@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .animation-delay-2000 { animation-delay: -5s; }
+  .animation-delay-4000 { animation-delay: -10s; }
+}
+
 html {
   overflow: overlay;
   background-color: hsl(0deg, 0%, 5%);
