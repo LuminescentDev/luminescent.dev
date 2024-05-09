@@ -1,118 +1,67 @@
-import { component$, Slot } from '@builder.io/qwik';
-import { Link, useLocation } from '@builder.io/qwik-city';
-
-import { LogoDiscord, LogoGithub, Menu, GitBranchOutline, DownloadOutline } from 'qwik-ionicons';
-import Logo from '~/components/elements/Logo';
-import LoadingIcon from './icons/LoadingIcon';
+import { component$ } from '@builder.io/qwik';
+import { Link } from '@builder.io/qwik-city';
+import { Button, ButtonAnchor, LogoDiscord, LogoLuminescentFull, Nav } from '@luminescent/ui';
+import { CubeOutline, DownloadOutline, GitNetworkOutline, LogoGithub } from 'qwik-ionicons';
 
 export default component$(() => {
   return (
-    <Nav>
-      <MainNav>
-        <NavButton href="/forks" extraClass="hidden sm:flex gap-3">
-          <GitBranchOutline width="24" class="fill-current" />
-          Fork Graph
-        </NavButton>
-        <NavButton href="/downloads" extraClass="hidden md:flex gap-3">
-          <DownloadOutline width="24" class="fill-current" />
-          Downloads
-        </NavButton>
-        <NavButton external icon href="https://github.com/LuminescentDev" title="GitHub" extraClass="hidden sm:flex">
-          <LogoGithub width="24" class="fill-purple-200" />
-        </NavButton>
-        <NavButton icon href="/discord" title="Discord" extraClass="hidden sm:flex">
-          <LogoDiscord width="24" class="fill-indigo-200" />
-        </NavButton>
-        <button id="mobile-menu-button" type="button" title="Menu" onClick$={() => {
-          const classList = document.getElementById('mobile-menu')?.classList;
-          if (classList?.contains('hidden')) classList.replace('hidden', 'flex');
-          else classList?.replace('flex', 'hidden');
-        }} class="transition ease-in-out hover:bg-gray-800 hover:text-white px-4 py-2 rounded-lg text-3xl md:hidden">
-          <Menu width="24" class="fill-current"/>
-        </button>
-      </MainNav>
-      <MobileNav>
-        <NavButton mobile href="/forks" extraClass="flex sm:hidden gap-2">
-          <GitBranchOutline width="24" class="fill-current" />
-          Fork Graph
-        </NavButton>
-        <NavButton mobile href="/downloads" extraClass="flex md:hidden gap-3">
-          <DownloadOutline width="24" class="fill-current" />
-          Downloads
-        </NavButton>
-        <div class="flex flex-row">
-          <NavButton external mobile icon href="https://github.com/LuminescentDev" title="GitHub" extraClass="flex sm:hidden">
-            <LogoGithub width="24" class="fill-purple-200" />
-          </NavButton>
-          <NavButton mobile icon href="/discord" title="Discord" extraClass="flex sm:hidden">
-            <LogoDiscord width="24" class="fill-indigo-200" />
-          </NavButton>
+    <Nav floating fixed>
+      <Link q:slot="start" href="/">
+        <Button transparent>
+          <div class="font-semibold flex items-center gap-1 text-[#f0ccfb] fill-[#f0ccfb]" style="filter: drop-shadow(0 0 1rem #CB6CE6);">
+            <LogoLuminescentFull width={100} class="mt-1" />
+          </div>
+        </Button>
+      </Link>
+
+      <Link q:slot="end" href="/forks" class={{
+        'hidden sm:flex': true,
+      }}>
+        <Button transparent>
+          <GitNetworkOutline width="24" /> Fork Graph
+        </Button>
+      </Link>
+      <ButtonAnchor q:slot="end" href="https://ui.luminescent.dev" transparent>
+        <div class="font-semibold flex items-center gap-1">
+          <LogoLuminescentFull width={100} class="mt-1" /> / ui
         </div>
-      </MobileNav>
+      </ButtonAnchor>
+      <Link q:slot="end" href="/downloads" class={{
+        'hidden sm:flex': true,
+      }}>
+        <Button transparent square>
+          <DownloadOutline width="24" />
+        </Button>
+      </Link>
+      <ButtonAnchor q:slot="end" square href="https://github.com/LuminescentDev" transparent class={{
+        'hidden sm:flex': true,
+      }}>
+        <LogoGithub width={24} />
+      </ButtonAnchor>
+      <ButtonAnchor q:slot="end" square href="/discord" transparent class={{
+        'hidden sm:flex': true,
+      }}>
+        <LogoDiscord width={24} />
+      </ButtonAnchor>
+
+      <Link q:slot="mobile" href="/forks" >
+        <Button transparent class={{ 'w-full': true }}>
+          <GitNetworkOutline width="24" /> Fork Graph
+        </Button>
+      </Link>
+      <ButtonAnchor q:slot="mobile" href="https://ui.luminescent.dev" transparent>
+        <div class="font-semibold flex items-center gap-1">
+          <LogoLuminescentFull width={100} class="mt-1" /> / ui
+        </div>
+      </ButtonAnchor>
+      <div q:slot='mobile' class="flex justify-evenly">
+        <ButtonAnchor q:slot="" square href="https://github.com/LuminescentDev" transparent>
+          <LogoGithub width={24} />
+        </ButtonAnchor>
+        <ButtonAnchor q:slot="end" square href="/discord" transparent>
+          <LogoDiscord width={24} />
+        </ButtonAnchor>
+      </div>
     </Nav>
   );
-});
-
-export const Nav = component$(() => {
-  return (
-    <nav class="z-20 fixed top-0 w-screen py-2 bg-gray-900/70 backdrop-blur-xl">
-      <div class="mx-auto max-w-7xl px-4 lg:px-6">
-        <Slot />
-      </div>
-    </nav>
-  );
-});
-
-export const Brand = component$(() => {
-  const location = useLocation();
-  return (
-    <div class="flex items-center justify-start">
-      <Link href="/" class="transition ease-in-out text-gray-300 hover:bg-gray-800 hover:text-white drop-shadow-2xl px-3 pt-3 pb-2 rounded-lg text-lg flex gap-2 items-center whitespace-nowrap">
-        <div style="filter: drop-shadow(0 0 0 #DD6CFF);" class="h-8 w-32">
-          <div style="filter: drop-shadow(0 0 1rem #CB6CE6);">
-            <Logo/>
-          </div>
-        </div>
-        <div class={`${location.isNavigating ? '' : '-ml-10 opacity-0'} transition-all`}>
-          <LoadingIcon/>
-        </div>
-      </Link>
-    </div>
-  );
-});
-
-export const MainNav = component$(() => {
-  return (
-    <div class="relative flex h-16 items-center justify-between">
-      <Brand/>
-      <div class="flex flex-1 items-center justify-end">
-        <div class="flex gap-2 text-gray-300 whitespace-nowrap">
-          <Slot/>
-        </div>
-      </div>
-    </div>
-  );
-});
-
-export const MobileNav = component$(() => {
-  return (
-    <div id="mobile-menu" class="gap-4 py-4 px-3 bg-black rounded-lg mt-2 hidden flex-col sm:hidden">
-      <Slot />
-    </div>
-  );
-});
-
-export const NavButton = component$(({ href, title, icon, external, extraClass, style }: any) => {
-  return <>
-    {external &&
-      <a href={href} title={title} style={style} class={`group transition ease-in-out hover:bg-gray-800 hover:text-white ${icon ? 'text-3xl px-2' : 'px-4'} py-2 rounded-lg items-center ${extraClass}`}>
-        <Slot />
-      </a>
-    }
-    {!external &&
-      <Link href={href} onClick$={async () => { document.getElementById('mobile-menu')?.classList.replace('flex', 'hidden'); }} title={title} style={style} class={`group transition ease-in-out hover:bg-gray-800 hover:text-white ${icon ? 'text-3xl px-2' : 'px-4'} py-2 rounded-lg items-center ${extraClass}`}>
-        <Slot />
-      </Link>
-    }
-  </>;
 });

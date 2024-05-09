@@ -3,10 +3,8 @@ import type { DocumentHead } from '@builder.io/qwik-city';
 
 export default component$(() => {
   return (
-    <section class="flex mx-auto max-w-6xl px-6 items-center" style={{ minHeight: 'calc(100dvh - 64px)' }}>
-      <div class="justify-center align-center mx-auto">
-        <img width="2500" height="1875" class="ease-in-out filter" src={'https://raw.githubusercontent.com/saboooor/fork-graph/main/img.png?v=8'} alt="fork graph" />
-      </div>
+    <section class="flex mx-auto max-w-7xl px-4 items-center justify-center min-h-[calc(100svh)] pt-24">
+      <img width="2500" height="1875" class="ease-in-out filter" src={'https://raw.githubusercontent.com/saboooor/fork-graph/main/img.png?v=9'} alt="fork graph" />
     </section>
   );
 });
@@ -28,7 +26,7 @@ export const head: DocumentHead = {
     },
     {
       property: 'og:image',
-      content: 'https://raw.githubusercontent.com/saboooor/fork-graph/main/img.png?v=8',
+      content: 'https://raw.githubusercontent.com/saboooor/fork-graph/main/img.png?v=9',
     },
   ],
 };

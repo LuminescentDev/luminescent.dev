@@ -9,7 +9,7 @@
 
 html {
   overflow: overlay;
-  background-color: hsl(0deg, 0%, 5%);
+  background-color: hsl(270deg, 22%, 5%);
 }
 
 * { scroll-behavior: smooth; }
@@ -25,64 +25,4 @@ html {
 *::-webkit-scrollbar-thumb {
   background-color: #ffffff20;
   border-radius: 2px;
-}
-
-/* NAVBAR TRANSITION */
-nav {
-  view-transition-name: nav;
-}
-
-/* MAIN TRANSITION */
-main {
-  view-transition-name: root;
-}
-
-::view-transition-old(root) {
-  animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
-    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-bottom;
-}
-
-::view-transition-new(root) {
-  animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
-    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-top;
-}
-
-
-@keyframes fade-in {
-  from { opacity: 0; }
-}
-
-@keyframes fade-out {
-  to { opacity: 0; }
-}
-@keyframes slide-from-top {
-  from {
-    transform: translateY(30px);
-    scale: 0.95;
-  }
-}
-@keyframes slide-to-bottom {
-  to {
-    transform: translateY(-30px);
-    scale: 0.95;
-  }
-}
-
-@keyframes rainbow {
-  0% { color: red; }
-  14% { color: orange; }
-  28% { color: yellow; }
-  42% { color: green; }
-  57% { color: blue; }
-  71% { color: indigo; }
-  85% { color: violet; }
-  100% { color: red; }
-}
-
-.animate-rainbow {
-  animation: rainbow 4s linear infinite;
-}
-
-.shadow-outline {
-  filter: drop-shadow(5px 0px 0px #000000) drop-shadow(-5px 0px 0px #000000) drop-shadow(0px 5px 0px #000000) drop-shadow(0px -5px 0px #000000);
 }

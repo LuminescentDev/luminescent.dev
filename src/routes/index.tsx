@@ -1,124 +1,250 @@
 import { component$ } from '@builder.io/qwik';
 import { DocumentHead } from '@builder.io/qwik-city';
 
-import { LogoDiscord, LogoGithub } from 'qwik-ionicons';
-import Logo from '~/components/elements/Logo';
-
-import Card from '~/components/elements/Card';
+import { GlobeOutline, LogoDiscord, LogoGithub } from 'qwik-ionicons';
+import { ButtonAnchor, Card, Header, LogoBirdflop, LogoLuminescent, LogoLuminescentFull } from '@luminescent/ui';
 
 export default component$(() => {
   return (
-    <section class="flex flex-col gap-3 mx-auto max-w-6xl px-6 items-center justify-center py-20" style={{ minHeight: 'calc(100dvh - 64px)' }}>
-      <div style="filter: drop-shadow(0 0 0 #DD6CFF);" class="px-[10%]">
+    <section class="flex flex-col mx-auto max-w-7xl px-4 items-center justify-center min-h-[calc(100svh)] pt-40">
+      <h1 class="relative text-gray-100 text-3xl sm:text-6xl font-bold animate-in fade-in slide-in-from-top-8 anim-duration-1000">
         <div style="filter: drop-shadow(0 0 3rem #CB6CE6);">
-          <Logo/>
+          <div class="font-semibold flex items-center gap-2 sm:gap-5 text-[#f0ccfb] fill-[#f0ccfb] select-none" style="filter: drop-shadow(0 0 5rem #CB6CE6);">
+            <LogoLuminescentFull width={400} class="mt-2 hidden sm:flex" />
+            <LogoLuminescentFull width={200} class="mt-1 flex sm:hidden" />
+          </div>
         </div>
+      </h1>
+      <h2 class="text-gray-300 text-lg sm:text-2xl animate-in fade-in slide-in-from-top-16 anim-duration-1000 my-6">
+        Yet another dev org.
+      </h2>
+
+      <div class="flex gap-2 justify-center">
+        <ButtonAnchor square href="https://luminescent.dev/discord" size="xl" transparent>
+          <LogoGithub width={30} />
+        </ButtonAnchor>
+        <ButtonAnchor square href="https://github.com/luminescentDev/ui" size="xl" transparent color="indigo">
+          <LogoDiscord width={30} />
+        </ButtonAnchor>
       </div>
 
-      <div class="flex flex-nowrap gap-3">
-        <a href="https://github.com/LuminescentDev" class="flex justify-center sm:justify-start transition rounded-xl hover:bg-gray-700 border border-gray-900 px-4 py-3 font-bold text-purple-100 text-xl md:text-3xl whitespace-nowrap gap-4 items-center">
-          <LogoGithub width="24" class="fill-current" />
-        </a>
-        <a href="/discord" class="flex justify-center sm:justify-start transition rounded-xl hover:bg-gray-700 border border-gray-900 px-4 py-3 font-bold text-indigo-100 text-xl md:text-3xl whitespace-nowrap gap-4 items-center">
-          <LogoDiscord width="24" class="fill-current"/>
-        </a>
-      </div>
-
-      <h1 class="font-bold text-white text-xl sm:text-3xl mt-10">
-        Our Projects
-      </h1>
-      <h1 class="text-sm sm:text-xl pb-8">
-        Here are some of the projects we're working on - Hover over them to see more info
-      </h1>
-      <div class="flex w-full overflow-x-hidden" style={{
-        '-webkit-mask-image': 'linear-gradient(90deg, transparent, #000 2%, #000 98%, transparent);',
+      <Header subheader="Here are some of the projects we're working on - Hover over them to see more info" class={{
+        'justify-center mt-10': true,
       }}>
+        Our Projects
+      </Header>
+      <div class="flex relative w-full overflow-x-hidden my-10">
         <div class="flex gap-4 px-10 overflow-x-auto py-2">
-          <Card
-            name="SimplyMC"
-            icon="https://www.simplymc.art/icon-192x192.png"
-            github="https://github.com/LuminescentDev/SimplyMC"
-            link="https://simplymc.art"
-            discord="https://discord.simplymc.art"
-            color="purple">
-            A Minecraft Multitool for server owners, developers, and players.
+          <Card color="gray" blobs="blue" hover="blur" class={{ 'min-w-64 max-w-64': true }}>
+            <LogoBirdflop width={200} class="mx-auto mb-5" fillGradient={['#54daf4', '#545eb6']}/>
+            <Header subheader="A place for all things Minecraft, including server hosting, and various resources." class={{
+              'whitespace-pre-wrap': true,
+            }}>
+              Birdflop
+            </Header>
+            <div class={{
+              'flex flex-col w-full text-white font-bold': true,
+              '[&>*]:h-full [&>*]:w-full hover:[&>*]:bg-blue-500/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-4': true,
+              '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
+            }} q:slot='blur'>
+              <a href={'https://birdflop.com'}>
+                <GlobeOutline width="24" class="fill-current" />
+                Visit page
+              </a>
+              <a href={'https://github.com/birdflop/web'}>
+                <LogoGithub width="24" class="fill-current" />
+                Github
+              </a>
+              <a href={'https://discord.gg/nmgtX5z'}>
+                <LogoDiscord width="24" class="fill-current" />
+                Discord
+              </a>
+            </div>
           </Card>
-          <Card
-            name="Cactie"
-            icon="https://cactie.luminescent.dev/icon-512x512.png"
-            github="https://github.com/saboooor/Cactie"
-            link="https://cactie.luminescent.dev/"
-            discord="/discord"
-            color="orange">
-            A Discord bot that does stuff ig
-            Admin, Fun, Tickets, Utilities, Animals, and Actions!
+          <Card color="gray" blobs="orange" hover="blur" class={{ 'min-w-64 max-w-64': true }}>
+            <img src="https://cactie.luminescent.dev/icon-192x192.png" height={200} width={200} class="mx-auto mb-5" />
+            <Header subheader="The last Discord bot you need, Cactie. Moderation, Fun, QOL, Utilities, and More!" class={{
+              'whitespace-pre-wrap': true,
+            }}>
+              Cactie
+            </Header>
+            <div class={{
+              'flex flex-col w-full text-white font-bold': true,
+              '[&>*]:h-full [&>*]:w-full hover:[&>*]:bg-orange-500/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-4': true,
+              '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
+            }} q:slot='blur'>
+              <a href={'https://cactie.luminescent.dev'}>
+                <GlobeOutline width="24" class="fill-current" />
+                Visit page
+              </a>
+              <a href={'https://github.com/saboooor/Cactie'}>
+                <LogoGithub width="24" class="fill-current" />
+                Github
+              </a>
+              <a href={'/discord'}>
+                <LogoDiscord width="24" class="fill-current" />
+                Discord
+              </a>
+            </div>
           </Card>
-          <Card
-            name="Lumin"
-            icon="https://lumin.luminescent.dev/Lumin.png"
-            github="https://github.com/bwmp/Lumin"
-            link="https://lumin.luminescent.dev/"
-            discord="/discord"
-            color="pink">
-            A silly little moon themed bot<br />
-            Interactions, Utilities, Fun!
+          <Card color="gray" blobs="pink" hover="blur" class={{ 'min-w-64 max-w-64': true }}>
+            <img src="https://lumin.luminescent.dev/Lumin.png" height={200} width={200} class="mx-auto mb-5" />
+            <Header subheader="A silly little moon themed bot. Interactions, Utilities, Fun!" class={{
+              'whitespace-pre-wrap': true,
+            }}>
+              Lumin
+            </Header>
+            <div class={{
+              'flex flex-col w-full text-white font-bold': true,
+              '[&>*]:h-full [&>*]:w-full hover:[&>*]:bg-pink-500/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-4': true,
+              '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
+            }} q:slot='blur'>
+              <a href={'https://lumin.luminescent.dev'}>
+                <GlobeOutline width="24" class="fill-current" />
+                Visit page
+              </a>
+              <a href={'https://github.com/bwmp/Lumin'}>
+                <LogoGithub width="24" class="fill-current" />
+                Github
+              </a>
+              <a href={'/discord'}>
+                <LogoDiscord width="24" class="fill-current" />
+                Discord
+              </a>
+            </div>
           </Card>
-          <Card
-            name="Nether Depths"
-            icon="https://raw.githubusercontent.com/saboooor/Nether-Depths/main/Branding/nd.png"
-            discord="https://discord.gg/Mw7fNpdg5N"
-            color="red">
-            Surpass the limits of the Nether.
-            A former Minecraft server which shut down and turned into a community Discord server.
+          <Card color="gray" blobs="red" hover="blur" class={{ 'min-w-64 max-w-64': true }}>
+            <img src="https://raw.githubusercontent.com/saboooor/Nether-Depths/main/Branding/nd.png" height={200} width={200} class="mx-auto mb-5" />
+            <Header subheader="Surpass the limits of the Nether. A former Minecraft server which shut down and turned into a community Discord server" class={{
+              'whitespace-pre-wrap': true,
+            }}>
+              Nether Depths
+            </Header>
+            <div class={{
+              'flex flex-col w-full text-white font-bold': true,
+              '[&>*]:h-full [&>*]:w-full hover:[&>*]:bg-red-500/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-4': true,
+              '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
+            }} q:slot='blur'>
+              <a href={'/discord'}>
+                <LogoDiscord width="24" class="fill-current" />
+                Discord
+              </a>
+            </div>
           </Card>
-          <Card
-            name="Botflop"
-            icon="https://birdflop.com/assets/images/bf-3-121x121.png"
-            github="https://github.com/LuminescentDev/botflop"
-            discord="https://discord.gg/nmgtX5z"
-            color="blue">
-            Discord Bot for server hosts, devs, and admins. Analyzes timings reports & uploads text files to a bin
+          <Card color="gray" blobs="blue" hover="blur" class={{ 'min-w-64 max-w-64': true }}>
+            <LogoBirdflop width={200} class="mx-auto mb-5" fillGradient={['#54daf4', '#545eb6']}/>
+            <Header subheader="Discord Bot for server hosts, devs, and admins. Analyzes timings reports & uploads text files to a bin." class={{
+              'whitespace-pre-wrap': true,
+            }}>
+              Botflop
+            </Header>
+            <div class={{
+              'flex flex-col w-full text-white font-bold': true,
+              '[&>*]:h-full [&>*]:w-full hover:[&>*]:bg-blue-500/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-4': true,
+              '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
+            }} q:slot='blur'>
+              <a href={'https://github.com/LuminescentDev/botflop'}>
+                <LogoGithub width="24" class="fill-current" />
+                Github
+              </a>
+              <a href={'https://discord.gg/nmgtX5z'}>
+                <LogoDiscord width="24" class="fill-current" />
+                Discord
+              </a>
+            </div>
           </Card>
-          <Card
-            name="Luminescent Transcript"
-            icon="https://avatars.githubusercontent.com/u/86643576?s=200&v=4"
-            github="https://github.com/LuminescentDev/LuminescentTranscript"
-            color="pink">
-            A Discord message transcript viewer (Not public yet, specifically made for Cactie)
+          <Card color="gray" blobs="pink" hover="blur" class={{ 'min-w-64 max-w-64': true }}>
+            <LogoLuminescent width={200} class="mx-auto mb-5 text-luminescent-300" />
+            <Header subheader="A Discord message transcript viewer. (Not public yet, specifically made for Cactie)" class={{
+              'whitespace-pre-wrap': true,
+            }}>
+              Luminescent Transcript
+            </Header>
+            <div class={{
+              'flex flex-col w-full text-white font-bold': true,
+              '[&>*]:h-full [&>*]:w-full hover:[&>*]:bg-pink-500/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-4': true,
+              '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
+            }} q:slot='blur'>
+              <a href={'https://github.com/LuminescentDev/LuminescentTranscript'}>
+                <LogoGithub width="24" class="fill-current" />
+                Github
+              </a>
+            </div>
           </Card>
-          <Card
-            name="Burgers on Fleek"
-            icon="https://www.burgersonfleek.ca/icon.svg"
-            github="https://github.com/saboooor/burgersonfleek"
-            link="https://burgersonfleek.ca"
-            color="orange">
-            Not exactly a project- but if you live in Ontario, this burger spot is amazing guaranteed you will love it, (i made the website)
+          <Card color="gray" blobs="orange" hover="blur" class={{ 'min-w-64 max-w-64': true }}>
+            <img src="https://www.burgersonfleek.ca/branding/icon.svg" height={200} width={200} class="mx-auto mb-5" />
+            <Header subheader="Not exactly a project- but if you live in Ontario, this burger spot is amazing guaranteed you will love it, (sab made the website)" class={{
+              'whitespace-pre-wrap': true,
+            }}>
+              Burgers on Fleek
+            </Header>
+            <div class={{
+              'flex flex-col w-full text-white font-bold': true,
+              '[&>*]:h-full [&>*]:w-full hover:[&>*]:bg-orange-500/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-4': true,
+              '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
+            }} q:slot='blur'>
+              <a href={'https://burgersonfleek.ca'}>
+                <GlobeOutline width="24" class="fill-current" />
+                Visit page
+              </a>
+              <a href={'https://github.com/saboooor/burgersonfleek'}>
+                <LogoGithub width="24" class="fill-current" />
+                Github
+              </a>
+            </div>
           </Card>
         </div>
       </div>
 
-      <h1 class="font-bold text-white text-xl sm:text-3xl mt-10">
+      <Header subheader="Here are our profiles" class={{
+        'justify-center mt-10': true,
+      }}>
         Us
-      </h1>
-      <h1 class="text-sm sm:text-xl pb-10">
-        Here are our profiles
-      </h1>
-      <div class="flex flex-col sm:flex-row gap-4 px-10">
-        <Card big
-          name="Saboor (@saboor.)"
-          width={128}
-          icon="https://avatars.githubusercontent.com/u/42164502"
-          github="https://github.com/saboooor"
-          link="https://sab.luminescent.dev">
-          Hey my name's saboor, you can call me sab, I mainly work on a Discord bot named Cactie & make websites like this one and SimplyMC, I am also a Culinary Arts student at NAIT and want to be a chef for a living.
+      </Header>
+      <div class="grid sm:grid-cols-2 gap-4 max-w-2xl my-10">
+        <Card color="purple" blobs hover="blur">
+          <img src="https://avatars.githubusercontent.com/u/42164502" height={192} width={192} class="rounded-md mb-5" />
+          <Header subheader="Hey my name's saboor, you can call me sab, I mainly work on a Discord bot named Cactie & make websites like this one and Birdflop, I am also a Culinary Arts student at NAIT and want to be a chef for a living." class={{
+            'whitespace-pre-wrap': true,
+          }}>
+            Saboor (@saboor.)
+          </Header>
+          <div class={{
+            'flex flex-col w-full text-white font-bold': true,
+            '[&>*]:h-full [&>*]:w-full hover:[&>*]:bg-purple-500/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-4': true,
+            '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
+          }} q:slot='blur'>
+            <a href={'https://burgersonfleek.ca'}>
+              <GlobeOutline width="24" class="fill-current" />
+              Visit page
+            </a>
+            <a href={'https://github.com/saboooor/burgersonfleek'}>
+              <LogoGithub width="24" class="fill-current" />
+              Github
+            </a>
+          </div>
         </Card>
-        <Card big
-          name="bwmp (@akiradev)"
-          width={128}
-          icon="https://avatars.githubusercontent.com/u/67001116"
-          github="https://github.com/bwmp"
-          link="https://akiradev.me">
-          Hey my name's Oli/bwmp/Akira, I mainly work on VRChat things, Discord bots like Lumin, Basement Bot, and websites like SimplyMC.
+        <Card color="blue" blobs hover="blur">
+          <img src="https://avatars.githubusercontent.com/u/67001116" height={192} width={192} class="rounded-md mb-5" />
+          <Header subheader="Hey my name's Oli/bwmp/Akira, I mainly work on VRChat things, Discord bots like Lumin, Basement Bot, and websites like Birdflop." class={{
+            'whitespace-pre-wrap': true,
+          }}>
+            bwmp (@akiradev)
+          </Header>
+          <div class={{
+            'flex flex-col w-full text-white font-bold': true,
+            '[&>*]:h-full [&>*]:w-full hover:[&>*]:bg-blue-500/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-4': true,
+            '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
+          }} q:slot='blur'>
+            <a href={'https://akiradev.me'}>
+              <GlobeOutline width="24" class="fill-current" />
+              Visit page
+            </a>
+            <a href={'https://github.com/bwmp'}>
+              <LogoGithub width="24" class="fill-current" />
+              Github
+            </a>
+          </div>
         </Card>
       </div>
     </section>
