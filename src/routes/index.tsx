@@ -214,11 +214,11 @@ export default component$(() => {
             '[&>*]:h-full [&>*]:w-full hover:[&>*]:bg-purple-500/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-4': true,
             '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
           }} q:slot='blur'>
-            <a href={'https://burgersonfleek.ca'}>
+            <a href={'https://sab.luminescent.dev'}>
               <GlobeOutline width="24" class="fill-current" />
               Visit page
             </a>
-            <a href={'https://github.com/saboooor/burgersonfleek'}>
+            <a href={'https://github.com/saboooor'}>
               <LogoGithub width="24" class="fill-current" />
               Github
             </a>
