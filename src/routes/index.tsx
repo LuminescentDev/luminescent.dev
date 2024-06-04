@@ -125,7 +125,7 @@ export default component$(() => {
               '[&>*]:h-full [&>*]:w-full hover:[&>*]:bg-red-500/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-4': true,
               '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
             }} q:slot='blur'>
-              <a href={'/discord'}>
+              <a href={'https://discord.gg/Mw7fNpdg5N'}>
                 <LogoDiscord width="24" class="fill-current" />
                 Discord
               </a>
