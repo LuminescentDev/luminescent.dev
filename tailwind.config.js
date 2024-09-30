@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-import tailwindConfig from '@luminescent/ui/config';
+import { content, theme } from '@luminescent/ui-qwik/config';
 
 const gray = {
   50: "hsl(270deg, 2%, 95%)",
@@ -16,27 +16,23 @@ const gray = {
  900: "hsl(270deg, 22%, 5%)",
 };
 
-export default {
-  content: [
-    './src/**/*.{js,ts,jsx,tsx}',
-    ...tailwindConfig.content,
-  ],
+module.exports = {
+  content: ['./src/**/*.{js,ts,jsx,tsx}', ...content],
   theme: {
     extend: {
       colors: {
         gray,
-        ...tailwindConfig.theme.extend.colors,
       },
       animation: {
-        float: "float 6s infinite",
-        ...tailwindConfig.theme.extend.animation,
+        ...theme.extend.animation,
       },
       keyframes: {
-        ...tailwindConfig.theme.extend.keyframes,
+        ...theme.extend.keyframes,
       },
     },
   },
   plugins: [
+    require('@luminescent/ui'),
     require('@anuragroy/tailwindcss-animate'),
   ],
 };
