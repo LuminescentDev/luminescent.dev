@@ -1,6 +1,6 @@
 import { component$ } from '@builder.io/qwik';
 import { DocumentHead, Link } from '@builder.io/qwik-city';
-import { Button, LogoLuminescent } from '@luminescent/ui';
+import { LogoLuminescent } from '@luminescent/ui-qwik';
 
 export default component$(() => {
   return (
@@ -20,10 +20,8 @@ export default component$(() => {
         Whoops! You've hit a dead-end.
       </p>
       <div class="grid sm:flex gap-3 pt-4">
-        <Link href="/">
-          <Button>
-            Go back home
-          </Button>
+        <Link href="/" class="lum-btn">
+          Go back home
         </Link>
       </div>
     </section>
