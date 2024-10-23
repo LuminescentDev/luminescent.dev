@@ -19,8 +19,8 @@
   },
   "devDependencies": {
     "@anuragroy/tailwindcss-animate": "^1.0.6",
-    "@builder.io/qwik": "1.9.0",
-    "@builder.io/qwik-city": "1.9.0",
+    "@builder.io/qwik": "1.9.1",
+    "@builder.io/qwik-city": "1.9.1",
     "@luminescent/ui": "^1.2.9",
     "@luminescent/ui-qwik": "^1.2.9",
     "@types/eslint": "^8.56.11",
@@ -29,13 +29,13 @@
     "@typescript-eslint/parser": "8.8.0",
     "autoprefixer": "10.4.20",
     "eslint": "^8.57.0",
-    "eslint-plugin-qwik": "1.9.0",
+    "eslint-plugin-qwik": "1.9.1",
     "postcss": "^8.4.47",
     "qwik-ionicons": "^1.0.5",
     "tailwindcss": "^3.4.13",
-    "typescript": "5.6.2",
+    "typescript": "5.6.3",
     "undici": "^6.19.8",
-    "vite": "5.4.8",
+    "vite": "5.4.10",
     "vite-tsconfig-paths": "5.0.1"
   }
 }
