@@ -1,7 +1,7 @@
 import { component$ } from '@builder.io/qwik';
 import { Link } from '@builder.io/qwik-city';
 import { LogoDiscord, LogoLuminescentFull, Nav } from '@luminescent/ui-qwik';
-import { Download, GitFork, Github } from 'lucide-icons-qwik';
+import { GitFork, Github } from 'lucide-icons-qwik';
 
 export default component$(() => {
   return (
@@ -22,11 +22,6 @@ export default component$(() => {
           <LogoLuminescentFull width={100} class="mt-1" /> / ui
         </div>
       </a>
-      <Link q:slot="end" href="/downloads" class={{
-        'hidden sm:flex lum-btn lum-bg-transparent lum-pad-equal-sm': true,
-      }}>
-        <Download size={20} />
-      </Link>
       <div q:slot='end' class="hidden sm:flex gap-2">
         <SocialButtons />
       </div>

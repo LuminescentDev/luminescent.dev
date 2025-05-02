@@ -22,10 +22,10 @@ export default component$(() => {
       </h2>
 
       <div class="flex gap-2 justify-center">
-        <a href="https://luminescent.dev/discord" class="lum-btn lum-bg-transparent lum-pad-equal-lg rounded-xl fill-gray-100 hover:fill-white">
+        <a href="https://github.com/luminescentDev/ui" class="lum-btn lum-bg-transparent lum-pad-equal-lg rounded-xl fill-gray-100 hover:fill-white">
           <Github size={30} />
         </a>
-        <a href="https://github.com/luminescentDev/ui" class="lum-btn lum-bg-transparent hover:lum-bg-indigo-700 lum-pad-equal-lg rounded-xl fill-indigo-300 hover:fill-white">
+        <a href="/discord" class="lum-btn lum-bg-transparent hover:lum-bg-indigo-700 lum-pad-equal-lg rounded-xl fill-indigo-300 hover:fill-white">
           <LogoDiscord width={30} />
         </a>
       </div>
