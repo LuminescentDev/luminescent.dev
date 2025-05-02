@@ -1,7 +1,7 @@
 import { component$ } from '@builder.io/qwik';
 import { Link } from '@builder.io/qwik-city';
 import { LogoDiscord, LogoLuminescentFull, Nav } from '@luminescent/ui-qwik';
-import { DownloadOutline, GitNetworkOutline, LogoGithub } from 'qwik-ionicons';
+import { Download, GitFork, Github } from 'lucide-icons-qwik';
 
 export default component$(() => {
   return (
@@ -13,28 +13,28 @@ export default component$(() => {
       </Link>
 
       <Link q:slot="end" href="/forks" class={{
-        'hidden sm:flex lum-btn lum-bg-transparent hover:text-white': true,
+        'hidden sm:flex lum-btn lum-bg-transparent': true,
       }}>
-        <GitNetworkOutline width="24" /> Fork Graph
+        <GitFork size={20} /> Fork Graph
       </Link>
-      <a q:slot="end" href="https://ui.luminescent.dev" class="lum-btn lum-bg-transparent hover:text-white">
+      <a q:slot="end" href="https://ui.luminescent.dev" class="lum-btn lum-bg-transparent">
         <div class="font-semibold flex items-center gap-1">
           <LogoLuminescentFull width={100} class="mt-1" /> / ui
         </div>
       </a>
       <Link q:slot="end" href="/downloads" class={{
-        'hidden sm:flex lum-btn lum-bg-transparent hover:text-white lum-pad-equal-sm': true,
+        'hidden sm:flex lum-btn lum-bg-transparent lum-pad-equal-sm': true,
       }}>
-        <DownloadOutline width="24" />
+        <Download size={20} />
       </Link>
       <div q:slot='end' class="hidden sm:flex gap-2">
         <SocialButtons />
       </div>
 
-      <Link q:slot="mobile" href="/forks" class="lum-btn lum-bg-transparent hover:text-white">
-        <GitNetworkOutline width="24" /> Fork Graph
+      <Link q:slot="mobile" href="/forks" class="lum-btn lum-bg-transparent">
+        <GitFork size={20} /> Fork Graph
       </Link>
-      <a q:slot="mobile" href="https://ui.luminescent.dev" class="lum-btn lum-bg-transparent hover:text-white">
+      <a q:slot="mobile" href="https://ui.luminescent.dev" class="lum-btn lum-bg-transparent">
         <div class="font-semibold flex items-center gap-1">
           <LogoLuminescentFull width={100} class="mt-1" /> / ui
         </div>
@@ -48,11 +48,11 @@ export default component$(() => {
 
 export const SocialButtons = component$(() => {
   return <>
-    <a href="https://github.com/LuminescentDev" title="GitHub" class="lum-btn lum-bg-transparent hover:text-white fill-current lum-pad-equal-sm">
-      <LogoGithub width="24" />
+    <a href="https://github.com/LuminescentDev" title="GitHub" class="lum-btn lum-bg-transparent lum-pad-equal-sm">
+      <Github size={20} />
     </a>
-    <a href="/discord" title="Discord" class="lum-btn lum-bg-transparent hover:text-white fill-current lum-pad-equal-sm">
-      <LogoDiscord width="24" />
+    <a href="/discord" title="Discord" class="lum-btn lum-bg-transparent lum-pad-equal-sm">
+      <LogoDiscord width="20" />
     </a>
   </>;
 });
