@@ -12,6 +12,7 @@ export default component$(() => {
    * Dont remove the `<head>` and `<body>` elements.
    */
 
+  // eslint-disable-next-line qwik/no-use-visible-task
   useVisibleTask$(() => {
     const nekoEl = document.createElement('div');
 

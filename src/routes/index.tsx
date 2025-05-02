@@ -46,8 +46,8 @@ export default component$(() => {
             </Header>
             <Blobs color='cyan' class={{ 'absolute overflow-clip rounded-lg -z-10': true }} style={{ transform: 'translateZ(-10px)' }}/>
             <div class={{
-              'lum-card lum-bg-gray-900/50 absolute inset-0 !p-0 !gap-0 !border-0 !text-white w-full h-full z-10 backdrop-blur-xl transition duration-300 hover:duration-75 ease-out opacity-0 hover:opacity-100': true,
-              '[&>*]:h-full [&>*]:w-full hover:[&>*]:bg-gray-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
+              'lum-card lum-bg-gray-900/50 absolute inset-0 !p-2 !gap-2 !border-0 !text-white w-full h-full z-10 backdrop-blur-xl transition duration-300 hover:duration-75 ease-out opacity-0 hover:opacity-100': true,
+              '[&>*]:h-full [&>*]:w-full [&>*]:lum-btn [&>*]:lum-bg-transparent [&>*]:hover:lum-bg-cyan-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
               '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
             }}>
               <a href={'https://birdflop.com'}>
@@ -73,8 +73,8 @@ export default component$(() => {
               Cactie
             </Header>
             <div class={{
-              'lum-card lum-bg-gray-900/50 absolute inset-0 !p-0 !gap-0 !border-0 !text-white w-full h-full z-10 backdrop-blur-xl transition duration-300 hover:duration-75 ease-out opacity-0 hover:opacity-100': true,
-              '[&>*]:h-full [&>*]:w-full hover:[&>*]:bg-gray-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
+              'lum-card lum-bg-gray-900/50 absolute inset-0 !p-2 !gap-2 !border-0 !text-white w-full h-full z-10 backdrop-blur-xl transition duration-300 hover:duration-75 ease-out opacity-0 hover:opacity-100': true,
+              '[&>*]:h-full [&>*]:w-full [&>*]:lum-btn [&>*]:lum-bg-transparent [&>*]:hover:lum-bg-cyan-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
               '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
             }}>
               <a href={'https://cactie.luminescent.dev'}>
@@ -92,7 +92,7 @@ export default component$(() => {
             </div>
           </div>
           <div class="lum-card lum-bg-gray-800/30 relative min-w-64 max-w-64">
-            <Blobs color='pink' class={{ 'absolute overflow-clip rounded-lg -z-10': true }} style={{ transform: 'translateZ(-10px)' }}/>
+            <Blobs color='purple' class={{ 'absolute overflow-clip rounded-lg -z-10': true }} style={{ transform: 'translateZ(-10px)' }}/>
             <Lumin class="mx-auto mb-5" />
             <Header subheader="A silly little moon themed bot. Interactions, Utilities, Fun!" class={{
               'whitespace-pre-wrap': true,
@@ -100,8 +100,8 @@ export default component$(() => {
               Lumin
             </Header>
             <div class={{
-              'lum-card lum-bg-gray-900/50 absolute inset-0 !p-0 !gap-0 !border-0 !text-white w-full h-full z-10 backdrop-blur-xl transition duration-300 hover:duration-75 ease-out opacity-0 hover:opacity-100': true,
-              '[&>*]:h-full [&>*]:w-full hover:[&>*]:bg-gray-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
+              'lum-card lum-bg-gray-900/50 absolute inset-0 !p-2 !gap-2 !border-0 !text-white w-full h-full z-10 backdrop-blur-xl transition duration-300 hover:duration-75 ease-out opacity-0 hover:opacity-100': true,
+              '[&>*]:h-full [&>*]:w-full [&>*]:lum-btn [&>*]:lum-bg-transparent [&>*]:hover:lum-bg-purple-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
               '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
             }}>
               <a href={'https://lumin.luminescent.dev'}>
@@ -129,8 +129,8 @@ export default component$(() => {
               Luminescent / ui
             </Header>
             <div class={{
-              'lum-card lum-bg-gray-900/50 absolute inset-0 !p-0 !gap-0 !border-0 !text-white w-full h-full z-10 backdrop-blur-xl transition duration-300 hover:duration-75 ease-out opacity-0 hover:opacity-100': true,
-              '[&>*]:h-full [&>*]:w-full hover:[&>*]:bg-gray-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
+              'lum-card lum-bg-gray-900/50 absolute inset-0 !p-2 !gap-2 !border-0 !text-white w-full h-full z-10 backdrop-blur-xl transition duration-300 hover:duration-75 ease-out opacity-0 hover:opacity-100': true,
+              '[&>*]:h-full [&>*]:w-full [&>*]:lum-btn [&>*]:lum-bg-transparent [&>*]:hover:lum-bg-pink-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
               '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
             }}>
               <a href={'https://ui.luminescent.dev'}>
@@ -152,8 +152,8 @@ export default component$(() => {
               Luminara SMP
             </Header>
             <div class={{
-              'lum-card lum-bg-gray-900/50 absolute inset-0 !p-0 !gap-0 !border-0 !text-white w-full h-full z-10 backdrop-blur-xl transition duration-300 hover:duration-75 ease-out opacity-0 hover:opacity-100': true,
-              '[&>*]:h-full [&>*]:w-full hover:[&>*]:bg-gray-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
+              'lum-card lum-bg-gray-900/50 absolute inset-0 !p-2 !gap-2 !border-0 !text-white w-full h-full z-10 backdrop-blur-xl transition duration-300 hover:duration-75 ease-out opacity-0 hover:opacity-100': true,
+              '[&>*]:h-full [&>*]:w-full [&>*]:lum-btn [&>*]:lum-bg-transparent [&>*]:hover:lum-bg-pink-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
               '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
             }}>
               <a href={'https://mc.luminescent.dev'}>
@@ -177,8 +177,8 @@ export default component$(() => {
               Lumi Transcript
             </Header>
             <div class={{
-              'lum-card lum-bg-gray-900/50 absolute inset-0 !p-0 !gap-0 !border-0 !text-white w-full h-full z-10 backdrop-blur-xl transition duration-300 hover:duration-75 ease-out opacity-0 hover:opacity-100': true,
-              '[&>*]:h-full [&>*]:w-full hover:[&>*]:bg-gray-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
+              'lum-card lum-bg-gray-900/50 absolute inset-0 !p-2 !gap-2 !border-0 !text-white w-full h-full z-10 backdrop-blur-xl transition duration-300 hover:duration-75 ease-out opacity-0 hover:opacity-100': true,
+              '[&>*]:h-full [&>*]:w-full [&>*]:lum-btn [&>*]:lum-bg-transparent [&>*]:hover:lum-bg-pink-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
               '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
             }}>
               <a href={'https://github.com/LuminescentDev/LuminescentTranscript'}>
@@ -196,8 +196,8 @@ export default component$(() => {
               Burgers on Fleek
             </Header>
             <div class={{
-              'lum-card lum-bg-gray-900/50 absolute inset-0 !p-0 !gap-0 !border-0 !text-white w-full h-full z-10 backdrop-blur-xl transition duration-300 hover:duration-75 ease-out opacity-0 hover:opacity-100': true,
-              '[&>*]:h-full [&>*]:w-full hover:[&>*]:bg-gray-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
+              'lum-card lum-bg-gray-900/50 absolute inset-0 !p-2 !gap-2 !border-0 !text-white w-full h-full z-10 backdrop-blur-xl transition duration-300 hover:duration-75 ease-out opacity-0 hover:opacity-100': true,
+              '[&>*]:h-full [&>*]:w-full [&>*]:lum-btn [&>*]:lum-bg-transparent [&>*]:hover:lum-bg-orange-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
               '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
             }}>
               <a href={'https://burgersonfleek.ca'}>
@@ -228,8 +228,8 @@ export default component$(() => {
             Saboor (@saboor.)
           </Header>
           <div class={{
-            'lum-card lum-bg-gray-900/50 absolute inset-0 !p-0 !gap-0 !border-0 !text-white w-full h-full z-10 backdrop-blur-xl transition duration-300 hover:duration-75 ease-out opacity-0 hover:opacity-100': true,
-            '[&>*]:h-full [&>*]:w-full hover:[&>*]:bg-orange-500/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
+            'lum-card lum-bg-gray-900/50 absolute inset-0 !p-2 !gap-2 !border-0 !text-white w-full h-full z-10 backdrop-blur-xl transition duration-300 hover:duration-75 ease-out opacity-0 hover:opacity-100': true,
+            '[&>*]:h-full [&>*]:w-full [&>*]:lum-btn [&>*]:lum-bg-transparent [&>*]:hover:lum-bg-purple-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
             '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
           }}>
             <a href={'https://sab.luminescent.dev'}>
@@ -251,8 +251,8 @@ export default component$(() => {
             bwmp (@akiradev)
           </Header>
           <div class={{
-            'lum-card lum-bg-gray-900/50 absolute inset-0 !p-0 !gap-0 !border-0 !text-white w-full h-full z-10 backdrop-blur-xl transition duration-300 hover:duration-75 ease-out opacity-0 hover:opacity-100': true,
-            '[&>*]:h-full [&>*]:w-full hover:[&>*]:bg-blue-500/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
+            'lum-card lum-bg-gray-900/50 absolute inset-0 !p-2 !gap-2 !border-0 !text-white w-full h-full z-10 backdrop-blur-xl transition duration-300 hover:duration-75 ease-out opacity-0 hover:opacity-100': true,
+            '[&>*]:h-full [&>*]:w-full [&>*]:lum-btn [&>*]:lum-bg-transparent [&>*]:hover:lum-bg-cyan-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
             '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
           }}>
             <a href={'https://akiradev.me'}>
