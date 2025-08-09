@@ -7,8 +7,8 @@ export default component$(() => {
   return (
     <Nav floating fixed colorClass="lum-bg-gray-800/50 !text-gray-100">
       <Link q:slot="start" href="/" class="lum-btn lum-bg-transparent">
-        <div class="font-semibold flex items-center gap-1 text-[#f0ccfb] fill-[#f0ccfb]" style="filter: drop-shadow(0 0 1rem #CB6CE6);">
-          <LogoLuminescentFull width={100} class="mt-1" />
+        <div class="font-semibold flex items-center text-[#f0ccfb] fill-[#f0ccfb]" style="filter: drop-shadow(0 0 1rem #CB6CE6);">
+          <LogoLuminescentFull width={100} />
         </div>
       </Link>
 
