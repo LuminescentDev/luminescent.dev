@@ -1,4 +1,4 @@
-import { component$ } from '@builder.io/qwik';
+import { component$, useVisibleTask$ } from '@builder.io/qwik';
 import { DocumentHead } from '@builder.io/qwik-city';
 
 import { Blobs, LogoBirdflop, LogoLuminescent, LogoLuminescentFull, LogoDiscord } from '@luminescent/ui-qwik';
@@ -38,6 +38,43 @@ export const MCTag = component$(() => {
 });
 
 export default component$(() => {
+  // eslint-disable-next-line qwik/no-use-visible-task
+  useVisibleTask$(() => {
+    const container = document.getElementById('auto-scroll-container');
+    const offsetChild = document.getElementById('offset');
+    if (!container || !offsetChild) return;
+    const padding = 10; // Padding to add to the offset
+
+    let hovering = false;
+
+    let translateX = 0;
+    // Automatically scroll without user interaction, append each child when it moves out of the container for infinite scrolling
+    const scrollInterval = setInterval(() => {
+      if (hovering) return;
+      translateX += 60; // Adjust speed as needed
+      container.style.transform = `translateX(-${translateX}px)`;
+      // append the first child to the end of the container when it moves out of view
+      const secondChild = container.children[1] as HTMLElement;
+      const offset = (secondChild?.clientWidth * 2) + offsetChild.clientWidth + padding;
+      const offsetWidth = secondChild?.clientWidth + offsetChild.clientWidth + padding;
+      if (translateX > offset) {
+        container.appendChild(secondChild);
+        // add width of second child to offset
+        offsetChild.style.width = `${offsetWidth}px`;
+      }
+    }, 1000);
+
+    // check if container is being hovered
+    container.addEventListener('mouseenter', () => {
+      hovering = true;
+      container.addEventListener('mouseleave', () => {
+        hovering = false;
+      });
+    });
+
+    return () => clearInterval(scrollInterval); // Cleanup on component unmount
+  });
+
   return (
     <section class="flex flex-col mx-auto max-w-7xl px-4 items-center justify-center min-h-[calc(100svh)] pt-40">
       <h1 class="relative text-gray-100 text-3xl sm:text-6xl font-bold animate-in fade-in slide-in-from-top-8 anim-duration-1000">
@@ -57,12 +94,14 @@ export default component$(() => {
       <h2 class="text-gray-100 text-3xl font-bold mb-2">
         Our Projects
       </h2>
-      <p class="text-gray-300">
-        Here are some of the projects we're working on - Hover over them to see more info
+      <p class="text-gray-400 text-center">
+        Here are some of the projects we're working on<br/>
+        Hover over them to see more info<br/>
       </p>
 
       <div class="flex relative w-full overflow-x-hidden my-10">
-        <div class="flex gap-2 overflow-x-auto py-2">
+        <div id="auto-scroll-container" class="flex gap-2 py-2 select-none transition-transform duration-1000 ease-linear">
+          <div id="offset"/>
           <div class="lum-card lum-bg-gray-800/30 relative min-w-64 max-w-64">
             <LogoBirdflop size={200} class="mx-auto mb-5" fillGradient={['#54daf4', '#545eb6']}/>
             <h3 class="text-gray-100 text-xl font-bold">
@@ -80,15 +119,15 @@ export default component$(() => {
               '[&>*]:h-full [&>*]:w-full [&>*]:lum-btn [&>*]:lum-bg-transparent [&>*]:hover:lum-bg-cyan-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
               '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
             }}>
-              <a href={'https://birdflop.com'}>
+              <a href={'https://birdflop.com'} draggable={false}>
                 <Globe size={24} />
                 Visit page
               </a>
-              <a href={'https://github.com/birdflop/web'}>
+              <a href={'https://github.com/birdflop/web'} draggable={false}>
                 <Github size={24} />
                 Github
               </a>
-              <a href={'https://discord.gg/nmgtX5z'}>
+              <a href={'https://discord.gg/nmgtX5z'} draggable={false}>
                 <LogoDiscord size={24} />
                 Discord
               </a>
@@ -111,15 +150,15 @@ export default component$(() => {
               '[&>*]:h-full [&>*]:w-full [&>*]:lum-btn [&>*]:lum-bg-transparent [&>*]:hover:lum-bg-cyan-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
               '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
             }}>
-              <a href={'https://mineplace.me'}>
+              <a href={'https://mineplace.me'} draggable={false}>
                 <Globe size={24} />
                 Visit page
               </a>
-              <a href={'https://github.com/LuminescentDev/mineplace'}>
+              <a href={'https://github.com/LuminescentDev/mineplace'} draggable={false}>
                 <Github size={24} />
                 Github
               </a>
-              <a href={'https://discord.gg/qNj5kMwE'}>
+              <a href={'https://discord.gg/qNj5kMwE'} draggable={false}>
                 <LogoDiscord size={24} />
                 Discord
               </a>
@@ -142,15 +181,15 @@ export default component$(() => {
               '[&>*]:h-full [&>*]:w-full [&>*]:lum-btn [&>*]:lum-bg-transparent [&>*]:hover:lum-bg-cyan-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
               '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
             }}>
-              <a href={'https://cactie.luminescent.dev'}>
+              <a href={'https://cactie.luminescent.dev'} draggable={false}>
                 <Globe size={24} />
                 Visit page
               </a>
-              <a href={'https://github.com/saboooor/Cactie'}>
+              <a href={'https://github.com/saboooor/Cactie'} draggable={false}>
                 <Github size={24} />
                 Github
               </a>
-              <a href={'/discord'}>
+              <a href={'/discord'} draggable={false}>
                 <LogoDiscord size={24} />
                 Discord
               </a>
@@ -173,15 +212,15 @@ export default component$(() => {
               '[&>*]:h-full [&>*]:w-full [&>*]:lum-btn [&>*]:lum-bg-transparent [&>*]:hover:lum-bg-purple-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
               '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
             }}>
-              <a href={'https://lumin.luminescent.dev'}>
+              <a href={'https://lumin.luminescent.dev'} draggable={false}>
                 <Globe size={24} />
                 Visit page
               </a>
-              <a href={'https://github.com/bwmp/Lumin'}>
+              <a href={'https://github.com/bwmp/Lumin'} draggable={false}>
                 <Github size={24} />
                 Github
               </a>
-              <a href={'/discord'}>
+              <a href={'/discord'} draggable={false}>
                 <LogoDiscord size={24} />
                 Discord
               </a>
@@ -204,11 +243,11 @@ export default component$(() => {
               '[&>*]:h-full [&>*]:w-full [&>*]:lum-btn [&>*]:lum-bg-transparent [&>*]:hover:lum-bg-pink-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
               '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
             }}>
-              <a href={'https://mc.luminescent.dev'}>
+              <a href={'https://mc.luminescent.dev'} draggable={false}>
                 <Globe size={24} />
                 Visit page
               </a>
-              <a href={'https://discord.gg/Mw7fNpdg5N'}>
+              <a href={'https://discord.gg/Mw7fNpdg5N'} draggable={false}>
                 <LogoDiscord size={24} />
                 Discord
               </a>
@@ -233,11 +272,11 @@ export default component$(() => {
               '[&>*]:h-full [&>*]:w-full [&>*]:lum-btn [&>*]:lum-bg-transparent [&>*]:hover:lum-bg-pink-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
               '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
             }}>
-              <a href={'https://ui.luminescent.dev'}>
+              <a href={'https://ui.luminescent.dev'} draggable={false}>
                 <Globe size={24} />
                 Visit page
               </a>
-              <a href={'https://github.com/LuminescentDev/ui'}>
+              <a href={'https://github.com/LuminescentDev/ui'} draggable={false}>
                 <Github size={24} />
                 Github
               </a>
@@ -260,11 +299,11 @@ export default component$(() => {
               '[&>*]:h-full [&>*]:w-full [&>*]:lum-btn [&>*]:lum-bg-transparent [&>*]:hover:lum-bg-orange-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
               '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
             }}>
-              <a href={'https://burgersonfleek.ca'}>
+              <a href={'https://burgersonfleek.ca'} draggable={false}>
                 <Globe size={24} />
                 Visit page
               </a>
-              <a href={'https://github.com/saboooor/burgersonfleek'}>
+              <a href={'https://github.com/saboooor/burgersonfleek'} draggable={false}>
                 <Github size={24} />
                 Github
               </a>
@@ -289,7 +328,7 @@ export default component$(() => {
               '[&>*]:h-full [&>*]:w-full [&>*]:lum-btn [&>*]:lum-bg-transparent [&>*]:hover:lum-bg-pink-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
               '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
             }}>
-              <a href={'https://github.com/LuminescentDev/LuminescentTranscript'}>
+              <a href={'https://github.com/LuminescentDev/LuminescentTranscript'} draggable={false}>
                 <Github size={24} />
                 Github
               </a>
@@ -316,11 +355,11 @@ export default component$(() => {
             '[&>*]:h-full [&>*]:w-full [&>*]:lum-btn [&>*]:lum-bg-transparent [&>*]:hover:lum-bg-purple-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
             '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
           }}>
-            <a href={'https://saboor.ca'}>
+            <a href={'https://saboor.ca'} draggable={false}>
               <Globe size={24} />
               Visit page
             </a>
-            <a href={'https://github.com/saboooor'}>
+            <a href={'https://github.com/saboooor'} draggable={false}>
               <Github size={24} />
               Github
             </a>
@@ -340,11 +379,11 @@ export default component$(() => {
             '[&>*]:h-full [&>*]:w-full [&>*]:lum-btn [&>*]:lum-bg-transparent [&>*]:hover:lum-bg-cyan-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
             '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
           }}>
-            <a href={'https://akiradev.me'}>
+            <a href={'https://akiradev.me'} draggable={false}>
               <Globe size={24} />
               Visit page
             </a>
-            <a href={'https://github.com/bwmp'}>
+            <a href={'https://github.com/bwmp'} draggable={false}>
               <Github size={24} />
               Github
             </a>
