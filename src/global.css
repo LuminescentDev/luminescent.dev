@@ -1,10 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+
 @import "tailwindcss";
-@plugin "@luminescent/ui";
+
 @plugin "@anuragroy/tailwindcss-animate";
-@config "../tailwind.config.js";
+
+@import "@luminescent/ui";
+
+@config "@luminescent/ui-qwik/config";
+@source "../node_modules/@luminescent/ui-qwik";
 
 @theme {
-  --font-display: "Satoshi", "sans-serif";
+  --lum-default-alpha: 70;
+  --lum-border-radius: 1rem;
+  --color-lum-border: #dfdfdfaa;
+  --color-nav-bg: --alpha(var(--color-sky-950) / 70%);
+  --color-bg: var(--color-gray-900);
+  --font-display: "Figtree", "sans-serif";
   --color-gray-50: oklch(98.5% 0.002 278.839);
   --color-gray-100: oklch(96.7% 0.003 295.542);
   --color-gray-200: oklch(92.8% 0.006 295.531);
