@@ -6,7 +6,9 @@ import { Github, Globe } from 'lucide-icons-qwik';
 
 import Cactie from '../components/images/Cactie.png?jsx';
 import Lumin from '../components/images/Lumin.png?jsx';
+import AetherSMP from '../components/images/AetherSMP.png?jsx';
 import Luminara from '../components/images/Luminara.png?jsx';
+import TwinkForsale from '../components/images/twinkforsale.png?jsx';
 import { SocialButtons } from '~/components/Nav';
 
 export const QwikTag = component$(() => {
@@ -33,6 +35,25 @@ export const MCTag = component$(() => {
       {/* eslint-disable-next-line qwik/jsx-img */}
       <img src="/minecraft.avif" alt="Minecraft Logo" width={16} height={16} class="rounded-lum-1" />
       Minecraft
+    </p>
+  );
+});
+
+export const OliTag = component$(() => {
+  return (
+    <p class="lum-btn lum-bg-purple-800/50 rounded-lum text-xs gap-1.5 font-semibold p-1 pr-2">
+      {/* eslint-disable-next-line qwik/jsx-img */}
+      <img src="https://avatars.githubusercontent.com/u/67001116" alt="@bwmp" width={16} height={16} class="rounded-lum-1" />
+      bwmp
+    </p>
+  );
+});
+export const SabTag = component$(() => {
+  return (
+    <p class="lum-btn lum-bg-cyan-800/50 rounded-lum text-xs gap-1.5 font-semibold p-1 pr-2">
+      {/* eslint-disable-next-line qwik/jsx-img */}
+      <img src="https://avatars.githubusercontent.com/u/42164502" alt="@saboooor" width={16} height={16} class="rounded-lum-1" />
+      sab
     </p>
   );
 });
@@ -108,7 +129,7 @@ export default component$(() => {
               Birdflop
             </h3>
             <div class="flex gap-2 items-center flex-wrap">
-              <QwikTag /><ReactTag /><MCTag />
+              <SabTag /><OliTag /><QwikTag /><ReactTag /><MCTag />
             </div>
             <p class="text-gray-400 text-sm">
               A registered 501(c)(3) nonprofit server host aiming to provide affordable and accessible hosting and resources.
@@ -138,8 +159,8 @@ export default component$(() => {
             <h3 class="text-gray-100 text-xl font-bold">
               Mineplace
             </h3>
-            <div class="flex gap-2 items-center">
-              <QwikTag /><MCTag />
+            <div class="flex gap-2 items-center flex-wrap">
+              <SabTag /><OliTag /><QwikTag /><MCTag />
             </div>
             <p class="text-gray-400 text-sm">
               A 3d version of r/place in Minecraft, powered by Birdflop Hosting.
@@ -170,8 +191,8 @@ export default component$(() => {
             <h3 class="text-gray-100 text-xl font-bold">
               Cactie
             </h3>
-            <div class="flex gap-2 items-center">
-              <QwikTag />
+            <div class="flex gap-2 items-center flex-wrap">
+              <SabTag /><QwikTag />
             </div>
             <p class="text-gray-400 text-sm">
               The last Discord bot you need, Cactie. Moderation, Fun, QOL, Utilities, and More!
@@ -201,8 +222,8 @@ export default component$(() => {
             <h3 class="text-gray-100 text-xl font-bold">
               Lumin
             </h3>
-            <div class="flex gap-2 items-center">
-              <QwikTag />
+            <div class="flex gap-2 items-center flex-wrap">
+              <OliTag /><QwikTag />
             </div>
             <p class="text-gray-400 text-sm">
               A silly little moon themed bot. Interactions, Utilities, Fun!
@@ -228,12 +249,43 @@ export default component$(() => {
           </div>
           <div class="lum-card lum-bg-gray-800/30 relative min-w-64 max-w-64">
             <Blobs color='pink' class={{ 'absolute overflow-clip rounded-lg -z-10': true }} style={{ transform: 'translateZ(-10px)' }}/>
+            <TwinkForsale class="mx-auto mb-5" />
+            <h3 class="text-gray-100 text-xl font-bold">
+              twink.forsale
+            </h3>
+            <div class="flex gap-2 items-center flex-wrap">
+              <OliTag /><QwikTag />
+            </div>
+            <p class="text-gray-400 text-sm">
+              The cutest, most uwu file sharing service and bio site ever! I made this 80% with ai cuz i could (´｡• ᵕ •｡`) ♡
+            </p>
+            <div class={{
+              'lum-card lum-bg-gray-900/50 absolute inset-0 !p-2 !gap-2 !border-0 !text-white w-full h-full z-10 backdrop-blur-xl transition duration-300 hover:duration-75 ease-out opacity-0 hover:opacity-100': true,
+              '[&>*]:h-full [&>*]:w-full [&>*]:lum-btn [&>*]:lum-bg-transparent [&>*]:hover:lum-bg-purple-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
+              '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
+            }}>
+              <a href={'https://twink.forsale'} draggable={false}>
+                <Globe size={24} />
+                Visit page
+              </a>
+              <a href={'https://github.com/LuminescentDev/twinkforsale'} draggable={false}>
+                <Github size={24} />
+                Github
+              </a>
+              <a href={'https://discord.gg/hNVkv4M674'} draggable={false}>
+                <LogoDiscord size={24} />
+                Discord
+              </a>
+            </div>
+          </div>
+          <div class="lum-card lum-bg-gray-800/30 relative min-w-64 max-w-64">
+            <Blobs color='pink' class={{ 'absolute overflow-clip rounded-lg -z-10': true }} style={{ transform: 'translateZ(-10px)' }}/>
             <Luminara class="mx-auto mb-5" />
             <h3 class="text-gray-100 text-xl font-bold">
-              Luminara SMP
+              Luminara
             </h3>
-            <div class="flex gap-2 items-center">
-              <QwikTag /><MCTag />
+            <div class="flex gap-2 items-center flex-wrap">
+              <SabTag /><QwikTag /><MCTag />
             </div>
             <p class="text-gray-400 text-sm">
               A Friendly Semi-Vanilla Minecraft Server also known as Nether Depths!
@@ -243,11 +295,38 @@ export default component$(() => {
               '[&>*]:h-full [&>*]:w-full [&>*]:lum-btn [&>*]:lum-bg-transparent [&>*]:hover:lum-bg-pink-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
               '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
             }}>
-              <a href={'https://mc.luminescent.dev'} draggable={false}>
+              <a href={'https://luminaramc.org'} draggable={false}>
                 <Globe size={24} />
                 Visit page
               </a>
               <a href={'https://discord.gg/Mw7fNpdg5N'} draggable={false}>
+                <LogoDiscord size={24} />
+                Discord
+              </a>
+            </div>
+          </div>
+          <div class="lum-card lum-bg-gray-800/30 relative min-w-64 max-w-64">
+            <Blobs color='yellow' class={{ 'absolute overflow-clip rounded-lg -z-10': true }} style={{ transform: 'translateZ(-10px)' }}/>
+            <AetherSMP class="mx-auto mb-5" />
+            <h3 class="text-gray-100 text-xl font-bold">
+              Aether SMP
+            </h3>
+            <div class="flex gap-2 items-center flex-wrap">
+              <OliTag /><QwikTag /><MCTag />
+            </div>
+            <p class="text-gray-400 text-sm">
+              A Survival Minecraft server featuring custom Aether-themed world generation!
+            </p>
+            <div class={{
+              'lum-card lum-bg-gray-900/50 absolute inset-0 !p-2 !gap-2 !border-0 !text-white w-full h-full z-10 backdrop-blur-xl transition duration-300 hover:duration-75 ease-out opacity-0 hover:opacity-100': true,
+              '[&>*]:h-full [&>*]:w-full [&>*]:lum-btn [&>*]:lum-bg-transparent [&>*]:hover:lum-bg-pink-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
+              '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
+            }}>
+              <a href={'https://aethersmp.com'} draggable={false}>
+                <Globe size={24} />
+                Visit page
+              </a>
+              <a href={'https://discord.gg/r4ZFkajnqa'} draggable={false}>
                 <LogoDiscord size={24} />
                 Discord
               </a>
@@ -261,8 +340,8 @@ export default component$(() => {
             <h3 class="text-gray-100 text-xl font-bold">
               Luminescent / ui
             </h3>
-            <div class="flex gap-2 items-center">
-              <QwikTag /><ReactTag />
+            <div class="flex gap-2 items-center flex-wrap">
+              <SabTag /><QwikTag /><ReactTag />
             </div>
             <p class="text-gray-400 text-sm">
               A component library for Qwik and React built with Tailwind CSS
@@ -288,8 +367,8 @@ export default component$(() => {
             <h3 class="text-gray-100 text-xl font-bold">
               Burgers on Fleek
             </h3>
-            <div class="flex gap-2 items-center">
-              <QwikTag />
+            <div class="flex gap-2 items-center flex-wrap">
+              <SabTag /><QwikTag />
             </div>
             <p class="text-gray-400 text-sm">
               The burgers you are craving.™ Premium Quality Gourmet Burgers, Steak Sandwiches, Fries, and more. est. 2019
@@ -317,8 +396,8 @@ export default component$(() => {
             <h3 class="text-gray-100 text-xl font-bold">
               Lumi Transcript
             </h3>
-            <div class="flex gap-2 items-center">
-              <QwikTag />
+            <div class="flex gap-2 items-center flex-wrap">
+              <SabTag /><QwikTag />
             </div>
             <p class="text-gray-400 text-sm">
               A Discord message transcript viewer. (Not public yet, specifically made for Cactie)

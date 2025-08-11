@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      lucide-react:
-        specifier: ^0.539.0
-        version: 0.539.0(react@19.1.1)
     devDependencies:
       '@anuragroy/tailwindcss-animate':
         specifier: ^1.0.6
@@ -1474,11 +1470,6 @@ packages:
     resolution: {integrity: sha512-IuWKcfr92qMsOIBKbFdZUe2XZ+A1OofxWqQ5LJUBE3dKPPmu/Wwe1HBcUIfScOA0eKoxKCKelD8sCFzHPND8KA==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11', npm: please-use-pnpm, pnpm: '>=8.6.12', yarn: please-use-pnpm}
 
-  lucide-react@0.539.0:
-    resolution: {integrity: sha512-VVISr+VF2krO91FeuCrm1rSOLACQUYVy7NQkzrOty52Y8TlTPcXcMdQFj9bYzBgXbWCiywlwSZ3Z8u6a+6bMlg==}
-    peerDependencies:
-      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
-
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
 
@@ -1718,10 +1709,6 @@ packages:
 
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
-
-  react@19.1.1:
-    resolution: {integrity: sha512-w8nqGImo45dmMIfljjMwOGtbmC/mk4CMYhWIicdSflH91J9TyCyczcPFXJzrZ/ZXcgGRFeP6BU0BEJTw6tZdfQ==}
-    engines: {node: '>=0.10.0'}
 
   regexp.prototype.flags@1.5.1:
     resolution: {integrity: sha512-sy6TXMN+hnP/wMy+ISxg3krXx7BAtWVO4UouuCN/ziM9UEne0euamVNafDfvC83bRNr95y0V5iijeDQFUNpvrg==}
@@ -3445,10 +3432,6 @@ snapshots:
 
   lucide-icons-qwik@0.533.0: {}
 
-  lucide-react@0.539.0(react@19.1.1):
-    dependencies:
-      react: 19.1.1
-
   magic-string@0.30.17:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.4
@@ -3874,8 +3857,6 @@ snapshots:
   punycode@2.3.0: {}
 
   queue-microtask@1.2.3: {}
-
-  react@19.1.1: {}
 
   regexp.prototype.flags@1.5.1:
     dependencies:

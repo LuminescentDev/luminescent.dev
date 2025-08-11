@@ -1,3 +1,2 @@
 reject:
-  - "vite" # building broken on v6
   - "typescript" # lint broken on 5.9
