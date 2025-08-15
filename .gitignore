@@ -10,7 +10,6 @@ node_modules
 # Cache
 .cache
 .mf
-.vscode
 .rollup.cache
 tsconfig.tsbuildinfo
 
@@ -45,3 +44,6 @@ config.json
 
 # Cloudflare
 functions/**/*.js
+
+.env
+.wrangler
