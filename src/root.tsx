@@ -1,5 +1,9 @@
 import { component$, useVisibleTask$ } from '@builder.io/qwik';
-import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from '@builder.io/qwik-city';
+import {
+  QwikCityProvider,
+  RouterOutlet,
+  ServiceWorkerRegister,
+} from '@builder.io/qwik-city';
 import { RouterHead } from './components/Head';
 
 import './global.css';
@@ -24,7 +28,13 @@ export default component$(() => {
 
     let frameCount = 0;
     let idleTime = 0;
-    type idleAnimations = 'sleeping' | 'scratchWallN' | 'scratchWallS' | 'scratchWallE' | 'scratchWallW' | 'scratchSelf';
+    type idleAnimations =
+      | 'sleeping'
+      | 'scratchWallN'
+      | 'scratchWallS'
+      | 'scratchWallE'
+      | 'scratchWallW'
+      | 'scratchSelf';
     let idleAnimation: idleAnimations | null = null;
     let idleAnimationFrame = 0;
 
@@ -131,7 +141,9 @@ export default component$(() => {
 
     function setSprite(name: keyof typeof spriteSets, frame: number) {
       const sprite = spriteSets[name][frame % spriteSets[name].length];
-      nekoEl.style.backgroundPosition = `${sprite[0] * 32}px ${sprite[1] * 32}px`;
+      nekoEl.style.backgroundPosition = `${sprite[0] * 32}px ${
+        sprite[1] * 32
+      }px`;
     }
 
     function resetIdleAnimation() {
@@ -148,12 +160,20 @@ export default component$(() => {
         Math.floor(Math.random() * 200) == 0 &&
         idleAnimation == null
       ) {
-        const avalibleIdleAnimations: idleAnimations[] = ['sleeping', 'scratchSelf'];
+        const avalibleIdleAnimations: idleAnimations[] = [
+          'sleeping',
+          'scratchSelf',
+        ];
         if (nekoPosX < 32) avalibleIdleAnimations.push('scratchWallW');
         if (nekoPosY < 32) avalibleIdleAnimations.push('scratchWallN');
-        if (nekoPosX > window.innerWidth - 32) avalibleIdleAnimations.push('scratchWallE');
-        if (nekoPosY > window.innerHeight - 32) avalibleIdleAnimations.push('scratchWallS');
-        idleAnimation = avalibleIdleAnimations[Math.floor(Math.random() * avalibleIdleAnimations.length)];
+        if (nekoPosX > window.innerWidth - 32)
+          avalibleIdleAnimations.push('scratchWallE');
+        if (nekoPosY > window.innerHeight - 32)
+          avalibleIdleAnimations.push('scratchWallS');
+        idleAnimation =
+          avalibleIdleAnimations[
+            Math.floor(Math.random() * avalibleIdleAnimations.length)
+          ];
       }
 
       switch (idleAnimation) {
@@ -212,7 +232,10 @@ export default component$(() => {
       const xDistance = diffX / distance;
       direction += yDistance > 0.5 ? 'N' : yDistance < -0.5 ? 'S' : '';
       direction += xDistance > 0.5 ? 'W' : xDistance < -0.5 ? 'E' : '';
-      setSprite(direction as 'N' | 'S' | 'W' | 'E' | 'NE' | 'SE' | 'SW' | 'NW', frameCount);
+      setSprite(
+        direction as 'N' | 'S' | 'W' | 'E' | 'NE' | 'SE' | 'SW' | 'NW',
+        frameCount,
+      );
 
       nekoPosX -= (diffX / distance) * nekoSpeed;
       nekoPosY -= (diffY / distance) * nekoSpeed;
@@ -230,11 +253,17 @@ export default component$(() => {
   return (
     <QwikCityProvider>
       <head>
-        <meta charset="utf-8" />
-        <link rel="manifest" href="/manifest.json" />
+        <meta charset='utf-8' />
+        <link rel='manifest' href='/manifest.json' />
+        <script
+          defer
+          src='https://umami.bwmp.dev/script.js'
+          data-website-id='3ee57841-ddf7-4d95-80d2-1c1c0beb3386'
+          data-domains='luminescent.dev'
+        />
         <RouterHead />
       </head>
-      <body class="text-gray-200">
+      <body class='text-gray-200'>
         <RouterOutlet />
         <ServiceWorkerRegister />
       </body>
