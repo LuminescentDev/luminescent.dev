@@ -71,7 +71,7 @@ export default component$(() => {
             '[&>*]:h-full [&>*]:w-full [&>*]:lum-btn [&>*]:lum-bg-transparent [&>*]:hover:lum-bg-cyan-900/20 [&>*]:flex [&>*]:flex-col [&>*]:justify-center [&>*]:transition-all [&>*]:items-center [&>*]:gap-2': true,
             '[&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg': true,
           }}>
-            <a href={'https://akiradev.me'} draggable={false}>
+            <a href={'https://bwmp.dev'} draggable={false}>
               <Globe size={24} />
               Visit page
             </a>
