@@ -1,46 +1,46 @@
-import { $, component$, useSignal, useVisibleTask$ } from '@builder.io/qwik';
+import { component$, useSignal, useVisibleTask$ } from '@builder.io/qwik';
 
 import { Blobs } from '@luminescent/ui-qwik';
 import { ChevronLeft, ChevronRight } from 'lucide-icons-qwik';
 
 import { Projects } from './ProjectList';
 
-const padding = 10; // Padding to add to the offset
-
 export default component$(() => {
-  const hovering = useSignal(false);
   const translateX = useSignal(0);
-  const scrollMultiplier = useSignal(1);
-  const offsetChild = useSignal<HTMLDivElement | undefined>();
-  const contentContainer = useSignal<HTMLDivElement | undefined>();
-
-  const scrollFn = $( (scrollMultiplier: number) => {
-    if (hovering.value || !offsetChild.value || !contentContainer.value) return;
-    translateX.value += 60 * scrollMultiplier; // Adjust speed as needed
-    contentContainer.value.style.transform = `translateX(-${translateX.value}px)`;
-    // append the first child to the end of the container when it moves out of view
-    for (let i = 0; i < scrollMultiplier; i++) {
-      const secondChild = contentContainer.value.children[1] as HTMLElement;
-      const offset = (secondChild?.clientWidth * 2) + offsetChild.value.clientWidth + padding;
-      const offsetWidth = secondChild?.clientWidth + offsetChild.value.clientWidth + padding;
-      if (translateX.value > offset) {
-        contentContainer.value.appendChild(secondChild);
-        // add width of second child to offset
-        offsetChild.value.style.width = `${offsetWidth}px`;
-      }
-    }
-  });
+  const targetX = useSignal(0);
+  const containerRef = useSignal<HTMLDivElement>();
 
   // eslint-disable-next-line qwik/no-use-visible-task
   useVisibleTask$(() => {
-    // Automatically scroll without user interaction, append each child when it moves out of the container for infinite scrolling
-    const duration = 250;
-    const scrollInterval = setInterval(
-      () => void scrollFn(scrollMultiplier.value),
-      duration / scrollMultiplier.value,
-    );
+    const animate = () => {
+      const el = containerRef.value;
+      if (!el) {
+        requestAnimationFrame(animate);
+        return;
+      }
 
-    return () => clearInterval(scrollInterval); // Cleanup on component unmount
+      // Smooth easing
+      translateX.value += (targetX.value - translateX.value) * 0.1;
+
+      const width = el.scrollWidth / 2;
+
+      // Infinite loop
+      if (translateX.value > width) {
+        translateX.value -= width;
+        targetX.value -= width;
+      }
+      if (translateX.value < 0) {
+        translateX.value += width;
+        targetX.value += width;
+      }
+
+      // Apply transform (negative for left scroll)
+      el.style.transform = `translateX(-${translateX.value}px)`;
+
+      requestAnimationFrame(animate);
+    };
+
+    animate();
   });
 
   return (
@@ -56,36 +56,43 @@ export default component$(() => {
       </div>
 
       <div class="flex relative w-full my-10 px-8">
-        {/* Speed buttons - allows for clicking anywhere but with a moderately sized visual button */}
-        <button class="absolute left-0 lum-bg-transparent z-10 h-full focus:border-none group" id="scroll-left"
-          onMouseEnter$={() => scrollMultiplier.value = -1}
-          onMouseLeave$={() => scrollMultiplier.value = 1}
-          onClick$={() => void scrollFn(-3)}>
+
+        {/* LEFT BUTTON */}
+        <button
+          class="absolute left-0 z-20 h-full group cursor-pointer"
+          onClick$={() => targetX.value -= 300}
+        >
           <div class="lum-btn p-2 pl-1 py-8 backdrop-blur-sm lum-bg-gray-900 group-hover:lum-bg-gray-800 drop-shadow-2xl rounded-lum-1">
-            <ChevronLeft size={48}/>
+            <ChevronLeft size={48} />
           </div>
         </button>
-        <button class="absolute right-0 lum-bg-transparent z-10 h-full focus:border-none group" id="scroll-right"
-          onClick$={() => void scrollFn(3)}>
+
+        {/* RIGHT BUTTON */}
+        <button
+          class="absolute right-0 z-20 h-full group cursor-pointer"
+          onClick$={() => targetX.value += 300}
+        >
           <div class="lum-btn p-2 pr-1 py-8 backdrop-blur-sm lum-bg-gray-900 group-hover:lum-bg-gray-800 drop-shadow-2xl">
-            <ChevronRight size={48}/>
+            <ChevronRight size={48} />
           </div>
         </button>
 
-        {/* Fade masks */}
-        <div class="absolute left-8 border border-r-0 rounded-r-none border-l-gray-800 border-y-gray-800 bg-gradient-to-r from-gray-950 to-transparent h-full w-20 z-5 rounded-lum pointer-events-none"/>
-        <div class="absolute right-8 border border-l-0 rounded-l-none border-r-gray-800 border-y-gray-800 bg-gradient-to-l from-gray-950 to-transparent h-full w-20 z-5 rounded-lum pointer-events-none"/>
+        {/* Fade edges */}
+        <div class="absolute left-8 rounded-r-none rounded-lum bg-linear-to-r from-gray-950 to-transparent h-full w-20 z-10 pointer-events-none"/>
+        <div class="absolute right-8 rounded-l-none rounded-lum bg-linear-to-l from-gray-950 to-transparent h-full w-20 z-10 pointer-events-none"/>
 
-        {/* Background - Can not put background on overflow container because of border rounding */}
-        <div class="absolute inset-0 rounded-lum lum-bg-gray-950 border-gray-800 mx-8"/>
+        {/* Background */}
+        <div class="absolute inset-0 rounded-lum lum-bg-gray-950 mx-8"/>
 
-        <div class="flex relative w-full overflow-x-hidden p-10">
-          <div id="content-container" ref={contentContainer} class="flex gap-2 py-2 select-none transition-transform duration-250 ease-linear"
-            onMouseEnter$={() => hovering.value = true} onMouseLeave$={() => hovering.value = false}>
-            {/* Offset that adds space before the card gets moved to the end */}
-            <div id="offset" ref={offsetChild} />
+        {/* Viewport */}
+        <div class="flex relative w-full overflow-hidden p-10">
 
-            {Projects.map((project) => (
+          {/* Scroll container */}
+          <div
+            ref={containerRef}
+            class="flex gap-2 py-2 select-none"
+          >
+            {[...Projects, ...Projects].map((project) => (
               <div key={project.title} class="lum-card lum-bg-gray-900/50 relative min-w-48 max-w-48 md:min-w-64 md:max-w-64">
                 {project.image}
                 <h3 class="text-gray-100 text-base md:text-xl font-bold">
@@ -117,10 +124,8 @@ export default component$(() => {
                 </div>
               </div>
             ))}
-
-            <div class="border-l border-l-lum-border/20 ml-2 pr-2"/>
-
           </div>
+
         </div>
       </div>
     </section>
